@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.dmribeiro87.cupcakeapp.R;
@@ -22,9 +23,14 @@ public final class FragmentHomeBinding implements ViewBinding {
   @NonNull
   public final ImageView ivLogo;
 
-  private FragmentHomeBinding(@NonNull ConstraintLayout rootView, @NonNull ImageView ivLogo) {
+  @NonNull
+  public final RecyclerView rvList;
+
+  private FragmentHomeBinding(@NonNull ConstraintLayout rootView, @NonNull ImageView ivLogo,
+      @NonNull RecyclerView rvList) {
     this.rootView = rootView;
     this.ivLogo = ivLogo;
+    this.rvList = rvList;
   }
 
   @Override
@@ -60,7 +66,13 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentHomeBinding((ConstraintLayout) rootView, ivLogo);
+      id = R.id.rvList;
+      RecyclerView rvList = ViewBindings.findChildViewById(rootView, id);
+      if (rvList == null) {
+        break missingId;
+      }
+
+      return new FragmentHomeBinding((ConstraintLayout) rootView, ivLogo, rvList);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

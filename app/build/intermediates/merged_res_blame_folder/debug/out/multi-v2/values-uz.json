@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.dmribeiro87.cupcakeapp-mergeDebugResources-51:/values-uz/values-uz.xml",
+            "outputFile": "com.dmribeiro87.cupcakeapp-mergeDebugResources-52:/values-uz/values-uz.xml",
             "map": [
                 {
                     "source": "/Users/diegoribeiro/.gradle/caches/transforms-3/e45f8c4afdee586636efc455c5793f1d/transformed/play-services-basement-18.1.0/res/values-uz/values.xml",

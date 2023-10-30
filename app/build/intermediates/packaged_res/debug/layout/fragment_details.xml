@@ -112,6 +112,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cv_price"
         android:text="Adicionar ao carrinho"
+        android:paddingVertical="14dp"
         android:textAllCaps="false"
         />
 

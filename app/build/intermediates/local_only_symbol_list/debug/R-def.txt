@@ -23,6 +23,7 @@ id label_flavour
 id nav_graph
 id nav_home
 id nav_host_fragment_content_main
+id rvList
 id tv_description
 id tv_flavour
 id tv_price

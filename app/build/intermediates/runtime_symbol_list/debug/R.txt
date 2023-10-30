@@ -3313,6 +3313,7 @@ int id frost 0x7f0800ce
 int id fullscreen_header 0x7f0800cf
 int id ghost_view 0x7f0800d0
 int id ghost_view_holder 0x7f0800d1
+int id glide_custom_view_target_tag 0x7f08020f
 int id gone 0x7f0800d2
 int id graph 0x7f0800d3
 int id graph_wrap 0x7f0800d4
@@ -3475,6 +3476,7 @@ int id right_side 0x7f08016d
 int id rounded 0x7f08016e
 int id row_index_key 0x7f08016f
 int id rtl 0x7f080170
+int id rvList 0x7f080210
 int id save_non_transition_alpha 0x7f080171
 int id save_overlay_view 0x7f080172
 int id sawtooth 0x7f080173

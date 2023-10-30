@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.dmribeiro87.cupcakeapp-mergeDebugResources-51:/values-as/values-as.xml",
+            "outputFile": "com.dmribeiro87.cupcakeapp-mergeDebugResources-52:/values-as/values-as.xml",
             "map": [
                 {
                     "source": "/Users/diegoribeiro/.gradle/caches/transforms-3/a361ed77b381d618f0545830a2ef6375/transformed/navigation-ui-2.6.0/res/values-as/values-as.xml",

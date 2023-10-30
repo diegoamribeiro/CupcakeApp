@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.dmribeiro87.cupcakeapp-mergeDebugResources-51:/values-hu/values-hu.xml",
+            "outputFile": "com.dmribeiro87.cupcakeapp-mergeDebugResources-52:/values-hu/values-hu.xml",
             "map": [
                 {
                     "source": "/Users/diegoribeiro/.gradle/caches/transforms-3/ae33d7f136b387b71a5cd89c55d6f0a6/transformed/browser-1.4.0/res/values-hu/values-hu.xml",

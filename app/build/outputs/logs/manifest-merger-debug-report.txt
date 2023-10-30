@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:2:1-31:12
-INJECTED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:2:1-31:12
-INJECTED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:2:1-31:12
-INJECTED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:2:1-31:12
+ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:2:1-32:12
+INJECTED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:2:1-32:12
+INJECTED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:2:1-32:12
+INJECTED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:2:1-32:12
 MERGED from [androidx.databinding:viewbinding:8.1.0] /Users/diegoribeiro/.gradle/caches/transforms-3/36922463d32d0a26925bfcbbbff31c09/transformed/viewbinding-8.1.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.navigation:navigation-common:2.6.0] /Users/diegoribeiro/.gradle/caches/transforms-3/107cef56938f19cde682077dcefc854c/transformed/navigation-common-2.6.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-common-ktx:2.6.0] /Users/diegoribeiro/.gradle/caches/transforms-3/73fb66cd890c8cf8e2e5c8b56ae02976/transformed/navigation-common-ktx-2.6.0/AndroidManifest.xml:17:1-22:12
@@ -15,11 +15,14 @@ MERGED from [androidx.navigation:navigation-ui-ktx:2.6.0] /Users/diegoribeiro/.g
 MERGED from [androidx.navigation:navigation-ui:2.6.0] /Users/diegoribeiro/.gradle/caches/transforms-3/a361ed77b381d618f0545830a2ef6375/transformed/navigation-ui-2.6.0/AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.material:material:1.9.0] /Users/diegoribeiro/.gradle/caches/transforms-3/cf6a6a696872ebd4c8f35f3a3e3a5ea5/transformed/material-1.9.0/AndroidManifest.xml:17:1-26:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/diegoribeiro/.gradle/caches/transforms-3/33ba7ef997aef651f44a2d28fdfc74e5/transformed/constraintlayout-2.1.4/AndroidManifest.xml:2:1-11:12
+MERGED from [io.insert-koin:koin-android:3.1.5] /Users/diegoribeiro/.gradle/caches/transforms-3/e47110e6cbe78e2db844d52544780da8/transformed/koin-android-3.1.5/AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/diegoribeiro/.gradle/caches/transforms-3/058c3e1b317aa8a27ff86164ed280705/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/diegoribeiro/.gradle/caches/transforms-3/d2bdd953c50ae4af80b4bde9ea7906bb/transformed/appcompat-1.6.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /Users/diegoribeiro/.gradle/caches/transforms-3/79e56c5f690204f1209a0597799b77df/transformed/emoji2-views-helper-1.2.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/diegoribeiro/.gradle/caches/transforms-3/46fcbd24341fb7716f081e63bd2c2a21/transformed/emoji2-1.2.0/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] /Users/diegoribeiro/.gradle/caches/transforms-3/f0e59ce64e24a68f888dd1ff78655472/transformed/lifecycle-extensions-2.2.0/AndroidManifest.xml:17:1-27:12
 MERGED from [com.google.firebase:firebase-auth:22.1.1] /Users/diegoribeiro/.gradle/caches/transforms-3/f5b059f67d182e3be8914bb354a26cec/transformed/firebase-auth-22.1.1/AndroidManifest.xml:17:1-75:12
+MERGED from [com.github.bumptech.glide:glide:4.16.0] /Users/diegoribeiro/.gradle/caches/transforms-3/ae221afabf8687d8008519246a351ad8/transformed/glide-4.16.0/AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/diegoribeiro/.gradle/caches/transforms-3/b4dd8ff9e6e7cb49c340906d4310d9e5/transformed/viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.firebase:firebase-firestore-ktx:24.7.1] /Users/diegoribeiro/.gradle/caches/transforms-3/e4e63ac792daf4c3d154dc82ada0f1d0/transformed/firebase-firestore-ktx-24.7.1/AndroidManifest.xml:2:1-18:12
 MERGED from [com.google.firebase:firebase-firestore:24.7.1] /Users/diegoribeiro/.gradle/caches/transforms-3/1cef6d7901563fdfb1515d55538ab6ed/transformed/firebase-firestore-24.7.1/AndroidManifest.xml:2:1-23:12
@@ -87,10 +90,12 @@ MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/diegoribeiro/.gr
 MERGED from [androidx.cardview:cardview:1.0.0] /Users/diegoribeiro/.gradle/caches/transforms-3/01d3a010596fd8bd8910c5d516c9b917/transformed/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-components:17.1.0] /Users/diegoribeiro/.gradle/caches/transforms-3/ebf64f0b65bb0b6a2b63f48bf19cc8d0/transformed/firebase-components-17.1.0/AndroidManifest.xml:15:1-22:12
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/diegoribeiro/.gradle/caches/transforms-3/e184597c62f01db0804e4a7cbdce6f1a/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/diegoribeiro/.gradle/caches/transforms-3/cdb4723c702f614e23a9cd76e210f90f/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [com.github.bumptech.glide:gifdecoder:4.16.0] /Users/diegoribeiro/.gradle/caches/transforms-3/6362ade9be4e35a969d56506191e01d6/transformed/gifdecoder-4.16.0/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.exifinterface:exifinterface:1.3.6] /Users/diegoribeiro/.gradle/caches/transforms-3/b9278ad95ea84032556e22ae40f7a3fe/transformed/exifinterface-1.3.6/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/diegoribeiro/.gradle/caches/transforms-3/174a55ff97ae06171f09d5deb74e1de9/transformed/profileinstaller-1.3.0/AndroidManifest.xml:17:1-55:12
 MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/diegoribeiro/.gradle/caches/transforms-3/544c10247b21b2b0654379f44e55865f/transformed/startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
 MERGED from [androidx.tracing:tracing:1.0.0] /Users/diegoribeiro/.gradle/caches/transforms-3/fd2e51564f76f04012519461aee5c650/transformed/tracing-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/diegoribeiro/.gradle/caches/transforms-3/cdb4723c702f614e23a9cd76e210f90f/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/diegoribeiro/.gradle/caches/transforms-3/e727cebbacbab66589c819448dd1ddf1/transformed/core-runtime-2.2.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/diegoribeiro/.gradle/caches/transforms-3/e8ae8d20dbde63c594100add27d5f4d9/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/diegoribeiro/.gradle/caches/transforms-3/c53ed4e2efbe260b957be65d35885630/transformed/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
@@ -133,14 +138,18 @@ MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.3.0] /U
 	android:name
 		ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:5:22-64
 application
-ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:7:5-29:19
-INJECTED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:7:5-29:19
+ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:7:5-30:19
+INJECTED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:7:5-30:19
 MERGED from [com.google.android.material:material:1.9.0] /Users/diegoribeiro/.gradle/caches/transforms-3/cf6a6a696872ebd4c8f35f3a3e3a5ea5/transformed/material-1.9.0/AndroidManifest.xml:24:5-20
 MERGED from [com.google.android.material:material:1.9.0] /Users/diegoribeiro/.gradle/caches/transforms-3/cf6a6a696872ebd4c8f35f3a3e3a5ea5/transformed/material-1.9.0/AndroidManifest.xml:24:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/diegoribeiro/.gradle/caches/transforms-3/33ba7ef997aef651f44a2d28fdfc74e5/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/diegoribeiro/.gradle/caches/transforms-3/33ba7ef997aef651f44a2d28fdfc74e5/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
+MERGED from [io.insert-koin:koin-android:3.1.5] /Users/diegoribeiro/.gradle/caches/transforms-3/e47110e6cbe78e2db844d52544780da8/transformed/koin-android-3.1.5/AndroidManifest.xml:7:5-20
+MERGED from [io.insert-koin:koin-android:3.1.5] /Users/diegoribeiro/.gradle/caches/transforms-3/e47110e6cbe78e2db844d52544780da8/transformed/koin-android-3.1.5/AndroidManifest.xml:7:5-20
 MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/diegoribeiro/.gradle/caches/transforms-3/46fcbd24341fb7716f081e63bd2c2a21/transformed/emoji2-1.2.0/AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/diegoribeiro/.gradle/caches/transforms-3/46fcbd24341fb7716f081e63bd2c2a21/transformed/emoji2-1.2.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] /Users/diegoribeiro/.gradle/caches/transforms-3/f0e59ce64e24a68f888dd1ff78655472/transformed/lifecycle-extensions-2.2.0/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] /Users/diegoribeiro/.gradle/caches/transforms-3/f0e59ce64e24a68f888dd1ff78655472/transformed/lifecycle-extensions-2.2.0/AndroidManifest.xml:24:5-25:19
 MERGED from [com.google.firebase:firebase-auth:22.1.1] /Users/diegoribeiro/.gradle/caches/transforms-3/f5b059f67d182e3be8914bb354a26cec/transformed/firebase-auth-22.1.1/AndroidManifest.xml:28:5-73:19
 MERGED from [com.google.firebase:firebase-auth:22.1.1] /Users/diegoribeiro/.gradle/caches/transforms-3/f5b059f67d182e3be8914bb354a26cec/transformed/firebase-auth-22.1.1/AndroidManifest.xml:28:5-73:19
 MERGED from [com.google.firebase:firebase-firestore-ktx:24.7.1] /Users/diegoribeiro/.gradle/caches/transforms-3/e4e63ac792daf4c3d154dc82ada0f1d0/transformed/firebase-firestore-ktx-24.7.1/AndroidManifest.xml:8:5-16:19
@@ -199,56 +208,58 @@ MERGED from [androidx.window:window:1.0.0] /Users/diegoribeiro/.gradle/caches/tr
 MERGED from [androidx.window:window:1.0.0] /Users/diegoribeiro/.gradle/caches/transforms-3/86de29280b131059484edb3bf5fff2a0/transformed/window-1.0.0/AndroidManifest.xml:24:5-31:19
 MERGED from [androidx.core:core:1.9.0] /Users/diegoribeiro/.gradle/caches/transforms-3/89030289aef074f5f4d6eb3f0032dd4c/transformed/core-1.9.0/AndroidManifest.xml:28:5-89
 MERGED from [androidx.core:core:1.9.0] /Users/diegoribeiro/.gradle/caches/transforms-3/89030289aef074f5f4d6eb3f0032dd4c/transformed/core-1.9.0/AndroidManifest.xml:28:5-89
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/diegoribeiro/.gradle/caches/transforms-3/cdb4723c702f614e23a9cd76e210f90f/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/diegoribeiro/.gradle/caches/transforms-3/cdb4723c702f614e23a9cd76e210f90f/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/diegoribeiro/.gradle/caches/transforms-3/174a55ff97ae06171f09d5deb74e1de9/transformed/profileinstaller-1.3.0/AndroidManifest.xml:23:5-53:19
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/diegoribeiro/.gradle/caches/transforms-3/174a55ff97ae06171f09d5deb74e1de9/transformed/profileinstaller-1.3.0/AndroidManifest.xml:23:5-53:19
 MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/diegoribeiro/.gradle/caches/transforms-3/544c10247b21b2b0654379f44e55865f/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
 MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/diegoribeiro/.gradle/caches/transforms-3/544c10247b21b2b0654379f44e55865f/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/diegoribeiro/.gradle/caches/transforms-3/cdb4723c702f614e23a9cd76e210f90f/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/diegoribeiro/.gradle/caches/transforms-3/cdb4723c702f614e23a9cd76e210f90f/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
 	android:extractNativeLibs
 		INJECTED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.9.0] /Users/diegoribeiro/.gradle/caches/transforms-3/89030289aef074f5f4d6eb3f0032dd4c/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:14:9-35
+		ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:15:9-35
 	android:label
-		ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:12:9-41
+		ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:13:9-41
 	android:fullBackupContent
-		ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:10:9-54
+		ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:11:9-54
 	android:roundIcon
-		ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:13:9-54
+		ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:14:9-54
 	tools:targetApi
-		ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:16:9-29
+		ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:17:9-29
 	android:icon
-		ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:11:9-43
+		ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:12:9-43
 	android:allowBackup
-		ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:8:9-35
+		ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:9:9-35
 	android:theme
-		ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:15:9-48
+		ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:16:9-48
 	android:dataExtractionRules
-		ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:9:9-65
+		ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:10:9-65
+	android:name
+		ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:8:9-38
 activity#com.dmribeiro87.cupcakeapp.MainActivity
-ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:17:9-28:20
+ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:18:9-29:20
 	android:screenOrientation
-		ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:21:13-51
+		ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:22:13-51
 	android:label
-		ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:20:13-45
+		ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:21:13-45
 	android:exported
-		ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:19:13-36
+		ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:20:13-36
 	android:theme
-		ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:22:13-52
+		ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:23:13-52
 	android:name
-		ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:18:13-41
+		ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:19:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:23:13-27:29
+ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:24:13-28:29
 action#android.intent.action.MAIN
-ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:24:17-69
+ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:25:17-69
 	android:name
-		ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:24:25-66
+		ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:25:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:26:17-77
+ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:27:17-77
 	android:name
-		ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:26:27-74
+		ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:27:27-74
 uses-sdk
 INJECTED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml
@@ -275,6 +286,8 @@ MERGED from [com.google.android.material:material:1.9.0] /Users/diegoribeiro/.gr
 MERGED from [com.google.android.material:material:1.9.0] /Users/diegoribeiro/.gradle/caches/transforms-3/cf6a6a696872ebd4c8f35f3a3e3a5ea5/transformed/material-1.9.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/diegoribeiro/.gradle/caches/transforms-3/33ba7ef997aef651f44a2d28fdfc74e5/transformed/constraintlayout-2.1.4/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/diegoribeiro/.gradle/caches/transforms-3/33ba7ef997aef651f44a2d28fdfc74e5/transformed/constraintlayout-2.1.4/AndroidManifest.xml:5:5-7:41
+MERGED from [io.insert-koin:koin-android:3.1.5] /Users/diegoribeiro/.gradle/caches/transforms-3/e47110e6cbe78e2db844d52544780da8/transformed/koin-android-3.1.5/AndroidManifest.xml:5:5-44
+MERGED from [io.insert-koin:koin-android:3.1.5] /Users/diegoribeiro/.gradle/caches/transforms-3/e47110e6cbe78e2db844d52544780da8/transformed/koin-android-3.1.5/AndroidManifest.xml:5:5-44
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/diegoribeiro/.gradle/caches/transforms-3/058c3e1b317aa8a27ff86164ed280705/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/diegoribeiro/.gradle/caches/transforms-3/058c3e1b317aa8a27ff86164ed280705/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/diegoribeiro/.gradle/caches/transforms-3/d2bdd953c50ae4af80b4bde9ea7906bb/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44
@@ -283,8 +296,12 @@ MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /Users/diegoribeiro/.gra
 MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /Users/diegoribeiro/.gradle/caches/transforms-3/79e56c5f690204f1209a0597799b77df/transformed/emoji2-views-helper-1.2.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/diegoribeiro/.gradle/caches/transforms-3/46fcbd24341fb7716f081e63bd2c2a21/transformed/emoji2-1.2.0/AndroidManifest.xml:21:5-44
 MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/diegoribeiro/.gradle/caches/transforms-3/46fcbd24341fb7716f081e63bd2c2a21/transformed/emoji2-1.2.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] /Users/diegoribeiro/.gradle/caches/transforms-3/f0e59ce64e24a68f888dd1ff78655472/transformed/lifecycle-extensions-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] /Users/diegoribeiro/.gradle/caches/transforms-3/f0e59ce64e24a68f888dd1ff78655472/transformed/lifecycle-extensions-2.2.0/AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.firebase:firebase-auth:22.1.1] /Users/diegoribeiro/.gradle/caches/transforms-3/f5b059f67d182e3be8914bb354a26cec/transformed/firebase-auth-22.1.1/AndroidManifest.xml:21:5-23:64
 MERGED from [com.google.firebase:firebase-auth:22.1.1] /Users/diegoribeiro/.gradle/caches/transforms-3/f5b059f67d182e3be8914bb354a26cec/transformed/firebase-auth-22.1.1/AndroidManifest.xml:21:5-23:64
+MERGED from [com.github.bumptech.glide:glide:4.16.0] /Users/diegoribeiro/.gradle/caches/transforms-3/ae221afabf8687d8008519246a351ad8/transformed/glide-4.16.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:glide:4.16.0] /Users/diegoribeiro/.gradle/caches/transforms-3/ae221afabf8687d8008519246a351ad8/transformed/glide-4.16.0/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/diegoribeiro/.gradle/caches/transforms-3/b4dd8ff9e6e7cb49c340906d4310d9e5/transformed/viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/diegoribeiro/.gradle/caches/transforms-3/b4dd8ff9e6e7cb49c340906d4310d9e5/transformed/viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.firebase:firebase-firestore-ktx:24.7.1] /Users/diegoribeiro/.gradle/caches/transforms-3/e4e63ac792daf4c3d154dc82ada0f1d0/transformed/firebase-firestore-ktx-24.7.1/AndroidManifest.xml:5:5-44
@@ -419,14 +436,18 @@ MERGED from [com.google.firebase:firebase-components:17.1.0] /Users/diegoribeiro
 MERGED from [com.google.firebase:firebase-components:17.1.0] /Users/diegoribeiro/.gradle/caches/transforms-3/ebf64f0b65bb0b6a2b63f48bf19cc8d0/transformed/firebase-components-17.1.0/AndroidManifest.xml:18:5-20:41
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/diegoribeiro/.gradle/caches/transforms-3/e184597c62f01db0804e4a7cbdce6f1a/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/diegoribeiro/.gradle/caches/transforms-3/e184597c62f01db0804e4a7cbdce6f1a/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/diegoribeiro/.gradle/caches/transforms-3/cdb4723c702f614e23a9cd76e210f90f/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/diegoribeiro/.gradle/caches/transforms-3/cdb4723c702f614e23a9cd76e210f90f/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.16.0] /Users/diegoribeiro/.gradle/caches/transforms-3/6362ade9be4e35a969d56506191e01d6/transformed/gifdecoder-4.16.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.16.0] /Users/diegoribeiro/.gradle/caches/transforms-3/6362ade9be4e35a969d56506191e01d6/transformed/gifdecoder-4.16.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.6] /Users/diegoribeiro/.gradle/caches/transforms-3/b9278ad95ea84032556e22ae40f7a3fe/transformed/exifinterface-1.3.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.6] /Users/diegoribeiro/.gradle/caches/transforms-3/b9278ad95ea84032556e22ae40f7a3fe/transformed/exifinterface-1.3.6/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/diegoribeiro/.gradle/caches/transforms-3/174a55ff97ae06171f09d5deb74e1de9/transformed/profileinstaller-1.3.0/AndroidManifest.xml:21:5-44
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/diegoribeiro/.gradle/caches/transforms-3/174a55ff97ae06171f09d5deb74e1de9/transformed/profileinstaller-1.3.0/AndroidManifest.xml:21:5-44
 MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/diegoribeiro/.gradle/caches/transforms-3/544c10247b21b2b0654379f44e55865f/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
 MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/diegoribeiro/.gradle/caches/transforms-3/544c10247b21b2b0654379f44e55865f/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
 MERGED from [androidx.tracing:tracing:1.0.0] /Users/diegoribeiro/.gradle/caches/transforms-3/fd2e51564f76f04012519461aee5c650/transformed/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.tracing:tracing:1.0.0] /Users/diegoribeiro/.gradle/caches/transforms-3/fd2e51564f76f04012519461aee5c650/transformed/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/diegoribeiro/.gradle/caches/transforms-3/cdb4723c702f614e23a9cd76e210f90f/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/diegoribeiro/.gradle/caches/transforms-3/cdb4723c702f614e23a9cd76e210f90f/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/diegoribeiro/.gradle/caches/transforms-3/e727cebbacbab66589c819448dd1ddf1/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/diegoribeiro/.gradle/caches/transforms-3/e727cebbacbab66589c819448dd1ddf1/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/diegoribeiro/.gradle/caches/transforms-3/e8ae8d20dbde63c594100add27d5f4d9/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
