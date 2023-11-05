@@ -6,12 +6,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.Window
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.dmribeiro87.cupcakeapp.MainActivity
 import com.dmribeiro87.cupcakeapp.R
 import com.dmribeiro87.cupcakeapp.databinding.FragmentHomeBinding
 import com.dmribeiro87.cupcakeapp.utils.viewBinding
+import com.dmribeiro87.model.Cupcake
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -29,6 +33,15 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        val window: Window = requireActivity().window
+        window.statusBarColor = resources.getColor(R.color.white)
+        val mActivity = (activity as MainActivity).supportActionBar
+        mActivity?.setBackgroundDrawable(
+            resources.getDrawable(
+                R.color.white,
+                resources.newTheme()
+            )
+        )
         return binding.root
     }
 
@@ -54,7 +67,6 @@ class HomeFragment : Fragment() {
         }
     }
 
-
     private fun setupRecyclerView() {
         context.let { context ->
             homeAdapter = HomeAdapter()
@@ -62,10 +74,9 @@ class HomeFragment : Fragment() {
             binding.rvList.adapter = homeAdapter
         }
         homeAdapter.setAction {
-            Toast.makeText(requireContext(), it.flavor, Toast.LENGTH_SHORT).show()
+            val action = HomeFragmentDirections.actionNavHomeToDetailsFragment(it)
+            NavHostFragment.findNavController(this).navigate(action)
         }
-
-
     }
 
 

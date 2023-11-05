@@ -3168,6 +3168,7 @@ id action_menu_presenter
 id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
+id action_nav_home_to_detailsFragment
 id action_settings
 id action_text
 id actions
@@ -3421,6 +3422,7 @@ id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
 id nav_controller_view_tag
+id nav_details
 id nav_graph
 id nav_home
 id nav_host_fragment_container

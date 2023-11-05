@@ -8,7 +8,7 @@ data class Order(
     val list: List<Cupcake>,
     val date: Date,
     val client: Client
-)
+) : Serializable
 
 data class Address(
     val city: String,
@@ -17,7 +17,7 @@ data class Address(
     val street: String,
     val homeNumber: String,
     val reference: String
-)
+) : Serializable
 
 data class Cupcake(
     val productId: String = "",
@@ -32,4 +32,4 @@ data class Cupcake(
 data class Client(
     val name: String,
     val address: Address
-)
+) : Serializable

@@ -7,14 +7,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dmribeiro87.cupcakeapp.R
 import com.dmribeiro87.cupcakeapp.databinding.ItemHomeBinding
+import com.dmribeiro87.cupcakeapp.utils.twoDecimals
 import com.dmribeiro87.model.Cupcake
 
 class HomeAdapter: RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
 
-
-
     private var cupcakeList = emptyList<Cupcake>()
-    private var action: ((Cupcake) -> Unit?)? = null
+    private var action: ((Cupcake) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeViewHolder {
         val binding = ItemHomeBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -40,9 +39,9 @@ class HomeAdapter: RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
     inner class HomeViewHolder(private val binding: ItemHomeBinding, private val context: Context) : RecyclerView.ViewHolder(binding.root){
 
         fun bind(cupcake: Cupcake, action: ((Cupcake) -> Unit?)?){
-            binding.tvTitle.text = cupcake.flavor
+            binding.tvTitle.text = cupcake.name
             binding.tvDescription.text = cupcake.description
-            binding.tvPrice.text = cupcake.price.toString()
+            binding.tvPrice.text = "R$ ${twoDecimals(cupcake.price)}"
             binding.tvWeight.text = "${cupcake.weight}g"
             Glide.with(context)
                 .load(cupcake.image)
@@ -55,6 +54,5 @@ class HomeAdapter: RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
                 }
             }
         }
-
     }
 }
