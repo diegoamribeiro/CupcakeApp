@@ -26,7 +26,6 @@ class CupcakeRepository {
         return try {
             val snapshot = db.collection("cupcakes").get().await()
             val cupcakes = snapshot.toObjects(Cupcake::class.java)
-            Log.d("***Repository", cupcakes.toString())
             cupcakes
         } catch (e: Exception) {
             println("Erro ao recuperar cupcakes: ${e.message}")

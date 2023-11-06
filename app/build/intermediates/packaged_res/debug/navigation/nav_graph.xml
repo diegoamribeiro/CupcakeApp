@@ -18,11 +18,16 @@
     <fragment
         android:id="@+id/nav_details"
         android:name="com.dmribeiro87.cupcakeapp.ui.details.DetailsFragment"
-        android:label="fragment_details"
+        android:label="Detalhes"
         tools:layout="@layout/fragment_details" >
         <argument
             android:name="selectedCupcake"
             app:argType="com.dmribeiro87.model.Cupcake" />
     </fragment>
+    <fragment
+        android:id="@+id/nav_cart"
+        android:name="com.dmribeiro87.cupcakeapp.ui.cart.CartFragment"
+        android:label="Carrinho"
+        tools:layout="@layout/fragment_cart" />
 
 </navigation>

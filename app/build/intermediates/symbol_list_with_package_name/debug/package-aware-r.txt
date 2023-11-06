@@ -2114,6 +2114,7 @@ color switch_thumb_normal_material_dark
 color switch_thumb_normal_material_light
 color tooltip_background_dark
 color tooltip_background_light
+color translucent
 color white
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
@@ -3011,11 +3012,15 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable empty_cart
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable ic_add
 drawable ic_arrow_back_black_24
+drawable ic_cart
 drawable ic_clear_black_24
 drawable ic_clock_black_24dp
+drawable ic_empty_cart
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -3026,6 +3031,7 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_remove
 drawable ic_search_black_24
 drawable m3_appbar_background
 drawable m3_avd_hide_password
@@ -3098,6 +3104,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable rounded_square_badge_icon
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -3159,6 +3166,7 @@ id action_bar_root
 id action_bar_spinner
 id action_bar_subtitle
 id action_bar_title
+id action_cart
 id action_container
 id action_context_bar
 id action_divider
@@ -3169,7 +3177,6 @@ id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
 id action_nav_home_to_detailsFragment
-id action_settings
 id action_text
 id actions
 id activity_chooser_view_content
@@ -3210,6 +3217,9 @@ id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
 id bt_add_cart
+id bt_checkout
+id bt_less
+id bt_plus
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -3251,6 +3261,7 @@ id customPanel
 id cut
 id cv_flavour
 id cv_price
+id cv_quantity
 id dark
 id date_picker_actions
 id decelerate
@@ -3344,6 +3355,8 @@ id inward
 id italic
 id item_touch_helper_previous_elevation
 id iv_cupcake
+id iv_empty_cart
+id iv_icon
 id iv_logo
 id jumpToEnd
 id jumpToStart
@@ -3421,6 +3434,7 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
+id nav_cart
 id nav_controller_view_tag
 id nav_details
 id nav_graph
@@ -3603,9 +3617,12 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tv_counter
 id tv_description
+id tv_empty_cart
 id tv_flavour
 id tv_price
+id tv_quantity
 id tv_title
 id tv_weight
 id unchecked
@@ -3747,6 +3764,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout action_bar_cart_icon
 layout activity_main
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
@@ -3766,8 +3784,10 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout fragment_cart
 layout fragment_details
 layout fragment_home
+layout item_cart
 layout item_home
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
@@ -3830,7 +3850,7 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
-menu menu_main
+menu menu_cart
 mipmap ic_launcher
 mipmap ic_launcher_round
 navigation nav_graph
