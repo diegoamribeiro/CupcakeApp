@@ -11,14 +11,17 @@ import android.view.ViewGroup
 import android.view.Window
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.dmribeiro87.cupcakeapp.MainActivity
 import com.dmribeiro87.cupcakeapp.R
 import com.dmribeiro87.cupcakeapp.databinding.FragmentDetailsBinding
+import com.dmribeiro87.cupcakeapp.ui.cart.CartViewModel
 import com.dmribeiro87.cupcakeapp.utils.twoDecimals
 import com.dmribeiro87.cupcakeapp.utils.viewBinding
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 class DetailsFragment : Fragment() {
@@ -26,6 +29,8 @@ class DetailsFragment : Fragment() {
     private val binding: FragmentDetailsBinding by viewBinding()
     private val args: DetailsFragmentArgs by navArgs()
     private var menuNotificationTextView: TextView? = null
+    private val viewModel: DetailsViewModel by viewModel()
+    private val cartViewModel: CartViewModel by viewModel()
 
 
     override fun onCreateView(
@@ -45,8 +50,12 @@ class DetailsFragment : Fragment() {
         return binding.root
     }
 
-    private fun openCart() {
-        NavHostFragment.findNavController(this@DetailsFragment).navigate(R.id.nav_cart)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        bindViews()
+        setListeners()
+        addObserver()
+        cartViewModel.loadOrders()
     }
 
     @Deprecated("Deprecated in Java")
@@ -62,9 +71,29 @@ class DetailsFragment : Fragment() {
         super.onCreateOptionsMenu(menu, inflater)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        bindViews()
+    private fun setListeners() {
+        binding.btAddCart.setOnClickListener {
+            viewModel.initializeOrAddCupcakeToSelection(args.selectedCupcake)
+            viewModel.createOrderForCheckout()
+            cartViewModel.loadOrders()
+        }
+    }
+
+    private fun addObserver() {
+        cartViewModel.orders.observe(viewLifecycleOwner){ ordersList ->
+            Log.d("***CartOrder", ordersList.toString())
+            Log.d("***CartSize", ordersList.size.toString())
+            if (ordersList.size > 0){
+                menuNotificationTextView?.visibility = View.VISIBLE
+                menuNotificationTextView?.text = ordersList.size.toString()
+            }else{
+                menuNotificationTextView?.visibility = View.GONE
+            }
+        }
+    }
+
+    private fun openCart() {
+        NavHostFragment.findNavController(this@DetailsFragment).navigate(R.id.nav_cart)
     }
 
     private fun bindViews() {

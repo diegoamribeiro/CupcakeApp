@@ -3,20 +3,22 @@ package com.dmribeiro87.model
 import java.io.Serializable
 import java.util.Date
 
+import com.google.firebase.Timestamp
+
 data class Order(
-    val orderId: String,
-    val list: List<Cupcake>,
-    val date: Date,
-    val client: Client
+    val orderId: String = "",
+    val list: List<Cupcake> = emptyList(), // Agora com um valor padrão
+    val date: Timestamp? = null, // Usando Timestamp do Firebase
+    val client: Client? = null
 ) : Serializable
 
 data class Address(
-    val city: String,
-    val state: String,
-    val neighborhood: String,
-    val street: String,
-    val homeNumber: String,
-    val reference: String
+    val city: String = "",
+    val state: String = "",
+    val neighborhood: String = "",
+    val street: String = "",
+    val homeNumber: String = "",
+    val reference: String= ""
 ) : Serializable
 
 data class Cupcake(
@@ -30,6 +32,6 @@ data class Cupcake(
 ) : Serializable
 
 data class Client(
-    val name: String,
-    val address: Address
+    val name: String = "",
+    val address: Address? = null
 ) : Serializable
