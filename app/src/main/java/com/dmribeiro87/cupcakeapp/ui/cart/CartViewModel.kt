@@ -17,6 +17,7 @@ class CartViewModel(private val repository: CupcakeRepository) : ViewModel() {
     val orders: LiveData<List<Order>> = _orders
 
 
+
     // Chama o repositório para carregar as orders
     fun loadOrders() {
         viewModelScope.launch {
