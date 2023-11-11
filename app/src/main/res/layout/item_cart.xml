@@ -120,7 +120,7 @@
                 android:textColor="@color/black"
                 android:layout_margin="8dp"
                 android:textStyle="bold"
-                tools:text="1" />
+                />
 
             <ImageButton
                 android:id="@+id/bt_less"

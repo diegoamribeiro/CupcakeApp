@@ -8,13 +8,11 @@ import com.dmribeiro87.model.Address
 import com.dmribeiro87.model.Client
 import com.dmribeiro87.model.Cupcake
 import com.dmribeiro87.model.Order
-import java.util.Date
+
 import java.util.UUID
 
 class DetailsViewModel(private val repository: CupcakeRepository): ViewModel() {
 
-
-    // Lista temporária para armazenar cupcakes antes do checkout
     // Lista temporária para armazenar cupcakes antes do checkout
     private val selectedCupcakes = mutableListOf<Cupcake>()
 

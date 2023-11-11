@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dmribeiro87.cupcakeapp.R
+import com.dmribeiro87.cupcakeapp.databinding.ItemCartBinding
 import com.dmribeiro87.cupcakeapp.databinding.ItemHomeBinding
 import com.dmribeiro87.cupcakeapp.utils.twoDecimals
 import com.dmribeiro87.model.Cupcake
@@ -16,7 +17,7 @@ class CartAdapter: RecyclerView.Adapter<CartAdapter.CartViewHolder>() {
     private var action: ((Cupcake) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CartViewHolder {
-        val binding = ItemHomeBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = ItemCartBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return CartViewHolder(binding, parent.context)
     }
 
@@ -36,7 +37,7 @@ class CartAdapter: RecyclerView.Adapter<CartAdapter.CartViewHolder>() {
         this.action = action
     }
 
-    inner class CartViewHolder(private val binding: ItemHomeBinding, private val context: Context) : RecyclerView.ViewHolder(binding.root){
+    inner class CartViewHolder(private val binding: ItemCartBinding, private val context: Context) : RecyclerView.ViewHolder(binding.root){
 
         fun bind(cupcake: Cupcake, action: ((Cupcake) -> Unit?)?){
             binding.tvTitle.text = cupcake.name

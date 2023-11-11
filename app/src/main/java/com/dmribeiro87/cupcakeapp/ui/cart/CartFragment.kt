@@ -36,7 +36,6 @@ class CartFragment : Fragment() {
         addObserver()
     }
 
-
     private fun addObserver() {
         val listCupcake = mutableListOf<Cupcake>()
         viewModel.orders.observe(viewLifecycleOwner){ ordersList ->
@@ -55,7 +54,6 @@ class CartFragment : Fragment() {
             }
         }
     }
-
 
     private fun setupRecyclerView() {
         context.let { context ->

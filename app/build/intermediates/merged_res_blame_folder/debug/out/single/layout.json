@@ -1,9 +1,5 @@
 [
     {
-        "merged": "com.dmribeiro87.cupcakeapp-mergeDebugResources-53:/layout/fragment_cart.xml",
-        "source": "com.dmribeiro87.cupcakeapp-main-56:/layout/fragment_cart.xml"
-    },
-    {
         "merged": "/Users/diegoribeiro/.gradle/daemon/8.0/com.dmribeiro87.cupcakeapp-mergeDebugResources-53:/layout/action_bar_cart_icon.xml",
         "source": "/Users/diegoribeiro/.gradle/daemon/8.0/com.dmribeiro87.cupcakeapp-main-56:/layout/action_bar_cart_icon.xml"
     },
@@ -22,6 +18,10 @@
     {
         "merged": "/Users/diegoribeiro/.gradle/daemon/8.0/com.dmribeiro87.cupcakeapp-mergeDebugResources-53:/layout/activity_main.xml",
         "source": "/Users/diegoribeiro/.gradle/daemon/8.0/com.dmribeiro87.cupcakeapp-main-56:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.dmribeiro87.cupcakeapp-mergeDebugResources-53:/layout/item_cart.xml",
+        "source": "com.dmribeiro87.cupcakeapp-main-56:/layout/item_cart.xml"
     },
     {
         "merged": "/Users/diegoribeiro/.gradle/daemon/8.0/com.dmribeiro87.cupcakeapp-mergeDebugResources-53:/layout/item_cart.xml",
