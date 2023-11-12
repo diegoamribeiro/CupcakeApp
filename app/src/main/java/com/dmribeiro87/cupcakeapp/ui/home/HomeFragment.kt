@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.dmribeiro87.cupcakeapp.MainActivity
 import com.dmribeiro87.cupcakeapp.R
 import com.dmribeiro87.cupcakeapp.databinding.FragmentHomeBinding
+import com.dmribeiro87.cupcakeapp.ui.cart.CartViewModel
 import com.dmribeiro87.cupcakeapp.utils.viewBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -27,6 +28,8 @@ class HomeFragment : Fragment() {
     private val viewModel: HomeViewModel by viewModel()
     private lateinit var homeAdapter: HomeAdapter
     private var menuNotificationTextView: TextView? = null
+    private val cartViewModel: CartViewModel by viewModel()
+
 
 
     override fun onCreateView(
@@ -72,7 +75,7 @@ class HomeFragment : Fragment() {
         viewModel.getCupcakes()
         setupRecyclerView()
         addObserver()
-
+        cartViewModel.loadOrders()
     }
 
     private fun addObserver(){
@@ -81,6 +84,17 @@ class HomeFragment : Fragment() {
                 homeAdapter.setData(list)
             }else{
                 Log.d("Error", list.size.toString())
+            }
+        }
+
+        cartViewModel.orders.observe(viewLifecycleOwner){ ordersList ->
+            Log.d("***CartOrder", ordersList.toString())
+            Log.d("***CartSize", ordersList.size.toString())
+            if (ordersList.size > 0){
+                menuNotificationTextView?.visibility = View.VISIBLE
+                menuNotificationTextView?.text = ordersList.size.toString()
+            }else{
+                menuNotificationTextView?.visibility = View.GONE
             }
         }
     }

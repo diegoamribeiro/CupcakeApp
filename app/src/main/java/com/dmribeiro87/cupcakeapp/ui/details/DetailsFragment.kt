@@ -81,8 +81,6 @@ class DetailsFragment : Fragment() {
 
     private fun addObserver() {
         cartViewModel.orders.observe(viewLifecycleOwner){ ordersList ->
-            Log.d("***CartOrder", ordersList.toString())
-            Log.d("***CartSize", ordersList.size.toString())
             if (ordersList.size > 0){
                 menuNotificationTextView?.visibility = View.VISIBLE
                 menuNotificationTextView?.text = ordersList.size.toString()

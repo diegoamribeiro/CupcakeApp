@@ -35,6 +35,51 @@ class CupcakeRepository {
         }
     }
 
+
+    fun createOrUpdateOrder(order: Order) {
+        // Aqui você pode usar o ID do pedido como o documento ID
+        db.collection("orders")
+            .document(order.orderId)
+            .set(order)
+            .addOnSuccessListener {
+            }
+            .addOnFailureListener {
+                // Tratar erros, por exemplo, falha de conexão
+            }
+    }
+
+    fun getAllOrders(onComplete: (List<Order>) -> Unit) {
+        db.collection("orders")
+            .get()
+            .addOnSuccessListener { result ->
+                val ordersList = result.mapNotNull { it.toObject(Order::class.java) }
+                onComplete(ordersList)
+            }
+            .addOnFailureListener { e ->
+                // Tratar exceção, por exemplo, falha de conexão ou query vazia
+                onComplete(emptyList())
+            }
+    }
+
+    fun removeCupcakeFromOrder(orderId: String, cupcake: Cupcake) {
+        val orderRef = db.collection("orders").document(orderId)
+
+        db.runTransaction { transaction ->
+            val snapshot = transaction.get(orderRef)
+            val order = snapshot.toObject(Order::class.java)
+            order?.let {
+                // Filtra a lista de cupcakes para remover o cupcake específico
+                val updatedCupcakes = it.list.filterNot { it.productId == cupcake.productId }
+                transaction.update(orderRef, "list", updatedCupcakes)
+            }
+        }.addOnSuccessListener {
+            Log.d("CupcakeRepository", "Cupcake removed successfully from order.")
+        }.addOnFailureListener { e ->
+            Log.e("CupcakeRepository", "Error removing cupcake from order.", e)
+        }
+    }
+
+
     fun getOrderForUser(userId: String, callback: (Order?) -> Unit) {
         db.collection("orders")
             .document(userId)
@@ -74,31 +119,6 @@ class CupcakeRepository {
             }
             .addOnFailureListener {
                 // Trate o erro
-            }
-    }
-
-    fun createOrUpdateOrder(order: Order) {
-        // Aqui você pode usar o ID do pedido como o documento ID
-        db.collection("orders")
-            .document(order.orderId)
-            .set(order)
-            .addOnSuccessListener {
-            }
-            .addOnFailureListener {
-                // Tratar erros, por exemplo, falha de conexão
-            }
-    }
-
-    fun getAllOrders(onComplete: (List<Order>) -> Unit) {
-        db.collection("orders")
-            .get()
-            .addOnSuccessListener { result ->
-                val ordersList = result.mapNotNull { it.toObject(Order::class.java) }
-                onComplete(ordersList)
-            }
-            .addOnFailureListener { e ->
-                // Tratar exceção, por exemplo, falha de conexão ou query vazia
-                onComplete(emptyList())
             }
     }
 

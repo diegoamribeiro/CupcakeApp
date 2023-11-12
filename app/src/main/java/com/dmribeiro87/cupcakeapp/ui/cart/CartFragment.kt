@@ -21,6 +21,7 @@ class CartFragment : Fragment() {
     private val binding: FragmentCartBinding by viewBinding()
     private val viewModel: CartViewModel by viewModel()
     private lateinit var cartAdapter: CartAdapter
+    private var orderId = ""
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,18 +38,29 @@ class CartFragment : Fragment() {
     }
 
     private fun addObserver() {
-        val listCupcake = mutableListOf<Cupcake>()
-        viewModel.orders.observe(viewLifecycleOwner){ ordersList ->
-            viewModel.orders.observe(viewLifecycleOwner){ list ->
-                list.map {
-                   listCupcake.addAll(it.list)
-                }
+        viewModel.orders.observe(viewLifecycleOwner) { ordersList ->
+            // Primeiro, coletamos todos os cupcakes de todos os pedidos em uma única lista
+            val allCupcakes = ordersList.flatMap {
+                it.list
             }
-            cartAdapter.setData(listCupcake)
-            if (ordersList.isNullOrEmpty()){
+
+            // Em seguida, agrupamos esses cupcakes pelo productId e pegamos o primeiro de cada grupo
+            val uniqueCupcakes = allCupcakes
+                .groupBy { it.productId }
+                .map { (_, cupcakes) -> cupcakes.first() }
+
+            // Agora, uniqueCupcakes contém apenas um cupcake de cada tipo
+            cartAdapter.setData(uniqueCupcakes)
+
+            if (ordersList.isNotEmpty()) {
+                orderId = ordersList.first().orderId
+            }
+
+            // Atualiza a visibilidade dos elementos de UI
+            if (ordersList.isNullOrEmpty()) {
                 binding.ivEmptyCart.visibility = View.VISIBLE
                 binding.tvEmptyCart.visibility = View.VISIBLE
-            }else{
+            } else {
                 binding.ivEmptyCart.visibility = View.GONE
                 binding.tvEmptyCart.visibility = View.GONE
             }
@@ -56,11 +68,19 @@ class CartFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
-        context.let { context ->
-            cartAdapter = CartAdapter()
-            binding.rvList.layoutManager = LinearLayoutManager(context)
-            binding.rvList.adapter = cartAdapter
+        cartAdapter = CartAdapter().apply {
+            setActionAdd {
+                Log.d("***Add", it.flavor)
+                viewModel.initializeOrAddCupcakeToSelection(it)
+                viewModel.createOrderForCheckout()
+            }
+            setActionRemove { cupcake ->
+                viewModel.removeCupcakes(cupcake = cupcake, orderId = orderId)
+                Log.d("***Remove", cupcake.flavor)
+            }
         }
+        binding.rvList.layoutManager = LinearLayoutManager(requireContext())
+        binding.rvList.adapter = cartAdapter
     }
 
 }

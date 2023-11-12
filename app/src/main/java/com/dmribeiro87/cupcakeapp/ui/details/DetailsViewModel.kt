@@ -44,6 +44,13 @@ class DetailsViewModel(private val repository: CupcakeRepository): ViewModel() {
     }
 
 
+//    private fun getTotalCupcakeCount(orders: List<Order>): Int {
+//        return orders.sumBy { order ->
+//            order.list.sumBy { it.size }
+//        }
+//    }
+
+
     // Função para finalizar o pedido, que será chamada no checkout
 //    fun finalizeOrder() {
 //        currentOrder?.let { order ->

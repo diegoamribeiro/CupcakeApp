@@ -1,6 +1,7 @@
 package com.dmribeiro87.cupcakeapp.ui.cart
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -14,7 +15,10 @@ import com.dmribeiro87.model.Cupcake
 class CartAdapter: RecyclerView.Adapter<CartAdapter.CartViewHolder>() {
 
     private var cupcakeList = emptyList<Cupcake>()
-    private var action: ((Cupcake) -> Unit)? = null
+    private var actionAdd: ((Cupcake) -> Unit)? = null
+    private var actionRemove: ((Cupcake) -> Unit)? = null
+    private var cupcakeQuantities: MutableMap<String, Int> = mutableMapOf()
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CartViewHolder {
         val binding = ItemCartBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -24,35 +28,51 @@ class CartAdapter: RecyclerView.Adapter<CartAdapter.CartViewHolder>() {
     override fun getItemCount() = cupcakeList.size
 
     override fun onBindViewHolder(holder: CartViewHolder, position: Int) {
-        holder.bind(cupcakeList[position], action)
+        holder.bind(cupcakeList[position])
     }
 
-    fun setData(list: List<Cupcake>){
-        this.cupcakeList = list
+    fun setData(newCupcakes: List<Cupcake>) {
+        cupcakeList = newCupcakes
+
+        // Atualiza as quantidades com base na nova lista de cupcakes
+        cupcakeQuantities.clear()
+        newCupcakes.groupBy { it.productId }.forEach { (productId, cupcakes) ->
+            cupcakeQuantities[productId] = cupcakes.size
+        }
         notifyDataSetChanged()
-        // Comments
     }
 
-    fun setAction(action: (Cupcake) -> Unit) {
-        this.action = action
+    fun setActionAdd(action: (Cupcake) -> Unit) {
+        this.actionAdd = action
+    }
+
+    fun setActionRemove(action: (Cupcake) -> Unit) {
+        this.actionRemove = action
     }
 
     inner class CartViewHolder(private val binding: ItemCartBinding, private val context: Context) : RecyclerView.ViewHolder(binding.root){
-
-        fun bind(cupcake: Cupcake, action: ((Cupcake) -> Unit?)?){
+        fun bind(cupcake: Cupcake) {
             binding.tvTitle.text = cupcake.name
             binding.tvDescription.text = cupcake.description
             binding.tvPrice.text = "R$ ${twoDecimals(cupcake.price)}"
             binding.tvWeight.text = "${cupcake.weight}g"
+
+            // Define a quantidade inicial para o cupcake
+            val quantity = cupcakeQuantities.getOrDefault(cupcake.productId, 0)
+            binding.tvQuantity.text = quantity.toString()
+
             Glide.with(context)
                 .load(cupcake.image)
                 .placeholder(R.drawable.cupcake_chocolate_img)
                 .into(binding.ivCupcake)
 
-            action?.let { currentCupcake ->
-                binding.root.setOnClickListener {
-                    currentCupcake(cupcake)
-                }
+
+            binding.btPlus.setOnClickListener {
+                actionAdd?.invoke(cupcake)
+            }
+
+            binding.btLess.setOnClickListener {
+                actionRemove?.invoke(cupcake)
             }
         }
     }
