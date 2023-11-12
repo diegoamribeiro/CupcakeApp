@@ -34,11 +34,16 @@ class CartAdapter: RecyclerView.Adapter<CartAdapter.CartViewHolder>() {
     fun setData(newCupcakes: List<Cupcake>) {
         cupcakeList = newCupcakes
 
-        // Atualiza as quantidades com base na nova lista de cupcakes
         cupcakeQuantities.clear()
-        newCupcakes.groupBy { it.productId }.forEach { (productId, cupcakes) ->
-            cupcakeQuantities[productId] = cupcakes.size
+        newCupcakes.groupBy { it.flavor }.forEach { (flavor, cupcakes) ->
+            cupcakeQuantities[flavor] = cupcakes.size
         }
+        notifyDataSetChanged()
+    }
+
+    fun updateQuantities(newQuantities: Map<String, Int>) {
+        cupcakeQuantities.clear()
+        cupcakeQuantities.putAll(newQuantities)
         notifyDataSetChanged()
     }
 
@@ -57,15 +62,13 @@ class CartAdapter: RecyclerView.Adapter<CartAdapter.CartViewHolder>() {
             binding.tvPrice.text = "R$ ${twoDecimals(cupcake.price)}"
             binding.tvWeight.text = "${cupcake.weight}g"
 
-            // Define a quantidade inicial para o cupcake
-            val quantity = cupcakeQuantities.getOrDefault(cupcake.productId, 0)
+            val quantity = cupcakeQuantities.getOrDefault(cupcake.flavor, 0)
             binding.tvQuantity.text = quantity.toString()
 
             Glide.with(context)
                 .load(cupcake.image)
                 .placeholder(R.drawable.cupcake_chocolate_img)
                 .into(binding.ivCupcake)
-
 
             binding.btPlus.setOnClickListener {
                 actionAdd?.invoke(cupcake)

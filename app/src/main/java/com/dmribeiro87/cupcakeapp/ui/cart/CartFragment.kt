@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.dmribeiro87.cupcakeapp.databinding.FragmentCartBinding
 import com.dmribeiro87.cupcakeapp.ui.home.HomeAdapter
 import com.dmribeiro87.cupcakeapp.ui.home.HomeFragmentDirections
+import com.dmribeiro87.cupcakeapp.utils.twoDecimals
 import com.dmribeiro87.cupcakeapp.utils.viewBinding
 import com.dmribeiro87.model.Cupcake
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -39,44 +40,56 @@ class CartFragment : Fragment() {
 
     private fun addObserver() {
         viewModel.orders.observe(viewLifecycleOwner) { ordersList ->
-            // Primeiro, coletamos todos os cupcakes de todos os pedidos em uma única lista
-            val allCupcakes = ordersList.flatMap {
-                it.list
-            }
+            // Define o orderId a partir do primeiro pedido da lista, se existir
+            orderId = ordersList.firstOrNull()?.orderId.orEmpty()
 
-            // Em seguida, agrupamos esses cupcakes pelo productId e pegamos o primeiro de cada grupo
-            val uniqueCupcakes = allCupcakes
-                .groupBy { it.productId }
+            // Coleta todos os cupcakes de todos os pedidos em uma única lista
+            val allCupcakes = ordersList.flatMap { it.list }
+
+            // Calcula a quantidade total e o preço total
+            val totalQuantity = allCupcakes.sumBy { 1 } // Ou allCupcakes.size
+            val totalPrice = allCupcakes.sumByDouble { it.price }
+
+            binding.tvQuantity.text = totalQuantity.toString()
+            binding.tvPrice.text = "R$ ${twoDecimals(totalPrice)}"
+
+            // Agrupa os cupcakes pelo sabor e pega um de cada sabor
+            val uniqueCupcakes = allCupcakes.groupBy { it.flavor }
                 .map { (_, cupcakes) -> cupcakes.first() }
 
-            // Agora, uniqueCupcakes contém apenas um cupcake de cada tipo
+            // Atualiza o adaptador com a lista de cupcakes únicos
             cartAdapter.setData(uniqueCupcakes)
 
-            if (ordersList.isNotEmpty()) {
-                orderId = ordersList.first().orderId
-            }
+            // Prepara e envia a contagem de cada sabor para o adaptador
+            val cupcakeQuantities = allCupcakes.groupBy { it.flavor }
+                .mapValues { (_, cupcakes) -> cupcakes.size }
+            cartAdapter.updateQuantities(cupcakeQuantities)
 
             // Atualiza a visibilidade dos elementos de UI
-            if (ordersList.isNullOrEmpty()) {
-                binding.ivEmptyCart.visibility = View.VISIBLE
-                binding.tvEmptyCart.visibility = View.VISIBLE
-            } else {
-                binding.ivEmptyCart.visibility = View.GONE
-                binding.tvEmptyCart.visibility = View.GONE
-            }
+            updateCartVisibility(ordersList.isEmpty())
         }
     }
 
+    private fun updateCartVisibility(isEmpty: Boolean) {
+        if (isEmpty) {
+            binding.ivEmptyCart.visibility = View.VISIBLE
+            binding.tvEmptyCart.visibility = View.VISIBLE
+        } else {
+            binding.ivEmptyCart.visibility = View.GONE
+            binding.tvEmptyCart.visibility = View.GONE
+        }
+    }
+
+
     private fun setupRecyclerView() {
         cartAdapter = CartAdapter().apply {
-            setActionAdd {
-                Log.d("***Add", it.flavor)
-                viewModel.initializeOrAddCupcakeToSelection(it)
-                viewModel.createOrderForCheckout()
+            setActionAdd {cupcake ->
+                Log.d("***Add", cupcake.flavor)
+                viewModel.addCupcakeToOrder(cupcake)
             }
             setActionRemove { cupcake ->
-                viewModel.removeCupcakes(cupcake = cupcake, orderId = orderId)
                 Log.d("***Remove", cupcake.flavor)
+                viewModel.removeCupcakeFromOrder(cupcake)
             }
         }
         binding.rvList.layoutManager = LinearLayoutManager(requireContext())

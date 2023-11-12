@@ -73,17 +73,19 @@ class DetailsFragment : Fragment() {
 
     private fun setListeners() {
         binding.btAddCart.setOnClickListener {
-            viewModel.initializeOrAddCupcakeToSelection(args.selectedCupcake)
+            val selectedCupcake = args.selectedCupcake
+            viewModel.initializeOrAddCupcakeToSelection(selectedCupcake)
             viewModel.createOrderForCheckout()
-            cartViewModel.loadOrders()
+            cartViewModel.loadOrders() // Isto pode não ser necessário se a CartViewModel não estiver mais gerenciando os pedidos.
         }
     }
 
+
     private fun addObserver() {
         cartViewModel.orders.observe(viewLifecycleOwner){ ordersList ->
-            if (ordersList.size > 0){
+            if (ordersList.isNotEmpty()){
                 menuNotificationTextView?.visibility = View.VISIBLE
-                menuNotificationTextView?.text = ordersList.size.toString()
+                menuNotificationTextView?.text = ordersList[0].list.size.toString()
             }else{
                 menuNotificationTextView?.visibility = View.GONE
             }

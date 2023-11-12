@@ -8,6 +8,60 @@
     android:paddingHorizontal="24dp"
     >
 
+    <TextView
+        android:id="@+id/label_quantity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="24dp"
+        android:text="Quantidade:"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/tv_quantity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/label_quantity"
+        android:layout_marginTop="24dp"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        tools:text="0" />
+
+    <TextView
+        android:id="@+id/label_price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/label_quantity"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="Total:"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/tv_price"
+        android:layout_width="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/label_price"
+        app:layout_constraintTop_toBottomOf="@id/tv_quantity"
+        tools:text="0" />
+
+
+
     <ImageView
         android:id="@+id/iv_empty_cart"
         android:layout_width="wrap_content"
@@ -39,7 +93,7 @@
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
         app:layout_constraintBottom_toTopOf="@id/bt_checkout"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_price"
         tools:layout_editor_absoluteX="24dp"
         tools:listitem="@layout/item_cart"
         tools:itemCount="15"

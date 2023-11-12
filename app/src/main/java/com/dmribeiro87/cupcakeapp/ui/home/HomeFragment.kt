@@ -90,9 +90,9 @@ class HomeFragment : Fragment() {
         cartViewModel.orders.observe(viewLifecycleOwner){ ordersList ->
             Log.d("***CartOrder", ordersList.toString())
             Log.d("***CartSize", ordersList.size.toString())
-            if (ordersList.size > 0){
+            if (ordersList.isNotEmpty()){
                 menuNotificationTextView?.visibility = View.VISIBLE
-                menuNotificationTextView?.text = ordersList.size.toString()
+                menuNotificationTextView?.text = ordersList[0].list.size.toString()
             }else{
                 menuNotificationTextView?.visibility = View.GONE
             }

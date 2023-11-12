@@ -9,6 +9,7 @@ import com.dmribeiro87.model.Address
 import com.dmribeiro87.model.Client
 import com.dmribeiro87.model.Cupcake
 import com.dmribeiro87.model.Order
+import com.google.firebase.Timestamp
 import kotlinx.coroutines.launch
 import java.util.UUID
 
@@ -18,7 +19,7 @@ class CartViewModel(private val repository: CupcakeRepository) : ViewModel() {
     val orders: LiveData<List<Order>> = _orders
     private val selectedCupcakes = mutableListOf<Cupcake>()
     private val _currentSelection = MutableLiveData<List<Cupcake>>()
-
+    private var currentOrderId: String? = null
 
 
     fun loadOrders() {
@@ -34,8 +35,52 @@ class CartViewModel(private val repository: CupcakeRepository) : ViewModel() {
         _currentSelection.value = selectedCupcakes
     }
 
-    fun removeCupcakes(cupcake: Cupcake, orderId: String){
-        repository.removeCupcakeFromOrder(orderId, cupcake)
+    fun addCupcakeToOrder(cupcake: Cupcake) {
+        val orderId = "unique-order-of-the-galaxy"
+
+        viewModelScope.launch {
+            try {
+                val existingOrder = repository.getOrderById(orderId)
+                val orderCupcakes = existingOrder?.list?.toMutableList() ?: mutableListOf()
+                orderCupcakes.add(cupcake)
+
+                val newOrder = Order(
+                    orderId = orderId,
+                    list = orderCupcakes,
+                    date = existingOrder?.date ?: Timestamp.now(),
+                    client = existingOrder?.client ?: Client("", Address("", "", "", "", "", ""))
+                )
+                repository.createOrUpdateOrder(newOrder)
+                loadOrders() // Recarrega os pedidos para refletir as mudanças
+            } catch (e: Exception) {
+                // Trate a exceção
+            }
+        }
+    }
+
+
+    fun removeCupcakeFromOrder(cupcake: Cupcake) {
+        val orderId = "unique-order-of-the-galaxy"
+
+        viewModelScope.launch {
+            try {
+                val existingOrder = repository.getOrderById(orderId)
+                existingOrder?.let {
+                    // Encontra o índice do primeiro cupcake que corresponde ao productId
+                    val cupcakeIndex = it.list.indexOfFirst { it.productId == cupcake.productId }
+                    if (cupcakeIndex != -1) {
+                        // Cria uma nova lista removendo o cupcake encontrado
+                        val updatedCupcakes = ArrayList(it.list)
+                        updatedCupcakes.removeAt(cupcakeIndex)
+                        val updatedOrder = it.copy(list = updatedCupcakes)
+                        repository.createOrUpdateOrder(updatedOrder)
+                        loadOrders() // Recarregar os pedidos para refletir as mudanças
+                    }
+                }
+            } catch (e: Exception) {
+                // Trate a exceção
+            }
+        }
     }
 
     fun createOrderForCheckout() {

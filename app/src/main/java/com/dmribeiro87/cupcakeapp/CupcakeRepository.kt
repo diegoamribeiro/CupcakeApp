@@ -3,6 +3,7 @@ package com.dmribeiro87.cupcakeapp
 import android.util.Log
 import com.dmribeiro87.model.Cupcake
 import com.dmribeiro87.model.Order
+import com.google.firebase.Timestamp
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
@@ -13,7 +14,7 @@ class CupcakeRepository {
 
     private val db: FirebaseFirestore = Firebase.firestore
 
-    suspend fun addCupcake(cupcake: Cupcake) {
+    suspend fun addCupcakeMocked(cupcake: Cupcake) {
         try {
             db.collection("cupcakes")
                 .add(cupcake)
@@ -21,6 +22,29 @@ class CupcakeRepository {
             println("Cupcake adicionado com sucesso!")
         } catch (e: Exception) {
             println("Erro ao adicionar cupcake: ${e.message}")
+        }
+    }
+
+    fun addCupcakeToOrder(cupcake: Cupcake, orderId: String) {
+        val orderRef = db.collection("orders").document(orderId)
+
+        db.runTransaction { transaction ->
+            val snapshot = transaction.get(orderRef)
+            val order = snapshot.toObject(Order::class.java)
+
+            order?.let {
+                val updatedCupcakes = ArrayList(it.list)
+                updatedCupcakes.add(cupcake)
+                transaction.update(orderRef, "list", updatedCupcakes)
+            } ?: run {
+                // Se o pedido não existe, cria um novo com o cupcake
+                val newOrder = Order(orderId, listOf(cupcake), Timestamp.now(), null)
+                transaction.set(orderRef, newOrder)
+            }
+        }.addOnSuccessListener {
+            Log.d("CupcakeRepository", "Cupcake added successfully to order.")
+        }.addOnFailureListener { e ->
+            Log.e("CupcakeRepository", "Error adding cupcake to order.", e)
         }
     }
 
@@ -32,6 +56,16 @@ class CupcakeRepository {
         } catch (e: Exception) {
             println("Erro ao recuperar cupcakes: ${e.message}")
             emptyList()
+        }
+    }
+
+    suspend fun getOrderById(orderId: String): Order? {
+        return try {
+            val snapshot = db.collection("orders").document(orderId).get().await()
+            snapshot.toObject(Order::class.java)
+        } catch (e: Exception) {
+            Log.e("CupcakeRepository", "Erro ao obter o pedido: ${e.message}")
+            null
         }
     }
 
@@ -68,7 +102,6 @@ class CupcakeRepository {
             val snapshot = transaction.get(orderRef)
             val order = snapshot.toObject(Order::class.java)
             order?.let {
-                // Filtra a lista de cupcakes para remover o cupcake específico
                 val updatedCupcakes = it.list.filterNot { it.productId == cupcake.productId }
                 transaction.update(orderRef, "list", updatedCupcakes)
             }
@@ -78,6 +111,7 @@ class CupcakeRepository {
             Log.e("CupcakeRepository", "Error removing cupcake from order.", e)
         }
     }
+
 
 
     fun getOrderForUser(userId: String, callback: (Order?) -> Unit) {
@@ -104,18 +138,6 @@ class CupcakeRepository {
             .update("list", FieldValue.arrayUnion(cupcake))
             .addOnSuccessListener {
                 // Trate a adição bem-sucedida
-            }
-            .addOnFailureListener {
-                // Trate o erro
-            }
-    }
-
-    fun createNewOrder(userId: String, order: Order) {
-        db.collection("orders")
-            .document(userId)
-            .set(order)
-            .addOnSuccessListener {
-                // Trate a criação bem-sucedida
             }
             .addOnFailureListener {
                 // Trate o erro

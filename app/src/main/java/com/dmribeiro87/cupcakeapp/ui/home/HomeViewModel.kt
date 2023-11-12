@@ -16,7 +16,7 @@ class HomeViewModel(private val repository: CupcakeRepository) : ViewModel(){
 
     fun addCupcake(cupcake: Cupcake) {
         viewModelScope.launch {
-            repository.addCupcake(cupcake)
+            repository.addCupcakeMocked(cupcake)
         }
     }
 
@@ -34,7 +34,7 @@ class HomeViewModel(private val repository: CupcakeRepository) : ViewModel(){
         )
 
         cupcakes.forEach { cupcake ->
-            repository.addCupcake(cupcake)
+            repository.addCupcakeMocked(cupcake)
         }
     }
 
