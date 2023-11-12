@@ -3360,6 +3360,8 @@ int id iv_logo 0x7f0800f8
 int id jumpToEnd 0x7f0800f9
 int id jumpToStart 0x7f0800fa
 int id label_flavour 0x7f0800fb
+int id label_price 0x7f08021e
+int id label_quantity 0x7f08021f
 int id labeled 0x7f0800fc
 int id layout 0x7f0800fd
 int id left 0x7f0800fe

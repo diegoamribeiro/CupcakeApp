@@ -3361,6 +3361,8 @@ id iv_logo
 id jumpToEnd
 id jumpToStart
 id label_flavour
+id label_price
+id label_quantity
 id labeled
 id layout
 id left
