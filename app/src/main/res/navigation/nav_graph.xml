@@ -28,6 +28,15 @@
         android:id="@+id/nav_cart"
         android:name="com.dmribeiro87.cupcakeapp.ui.cart.CartFragment"
         android:label="Carrinho"
-        tools:layout="@layout/fragment_cart" />
+        tools:layout="@layout/fragment_cart" >
+        <action
+            android:id="@+id/action_nav_cart_to_vav_adress"
+            app:destination="@id/vav_adress" />
+    </fragment>
+    <fragment
+        android:id="@+id/vav_adress"
+        android:name="com.dmribeiro87.cupcakeapp.AdressFragment"
+        android:label="fragment_adress"
+        tools:layout="@layout/fragment_adress" />
 
 </navigation>

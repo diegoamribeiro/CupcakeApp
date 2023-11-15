@@ -8,60 +8,6 @@
     android:paddingHorizontal="24dp"
     >
 
-    <TextView
-        android:id="@+id/label_quantity"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Quantidade:"
-        android:textColor="@color/black"
-        android:layout_marginTop="16dp"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rvList"
-        />
-
-    <TextView
-        android:id="@+id/tv_quantity"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/bt_checkout"
-        app:layout_constraintStart_toEndOf="@id/label_quantity"
-        app:layout_constraintTop_toTopOf="@id/label_quantity"
-        tools:text="0" />
-
-    <TextView
-        android:id="@+id/label_price"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Total:"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/label_quantity" />
-
-    <TextView
-        android:id="@+id/tv_price"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/bt_checkout"
-        app:layout_constraintStart_toEndOf="@+id/label_price"
-        app:layout_constraintTop_toBottomOf="@id/tv_quantity"
-        tools:text="0" />
-
-
-
     <ImageView
         android:id="@+id/iv_empty_cart"
         android:layout_width="wrap_content"
@@ -92,25 +38,70 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@id/bt_checkout"
+        app:layout_constraintBottom_toTopOf="@id/cv_bottom"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="24dp"
         tools:listitem="@layout/item_cart"
         tools:itemCount="15"
         />
 
-    <Button
-        android:id="@+id/bt_checkout"
-        android:layout_width="wrap_content"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_bottom"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/brown"
-        android:paddingVertical="14dp"
-        android:layout_margin="16dp"
-        android:text="Checkout"
-        android:textAllCaps="false"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rvList"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        />
+            <TextView
+                android:id="@+id/label_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Total:"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:fontFamily="@font/poppins_light"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/tv_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/label_price"
+                android:gravity="end"
+                android:fontFamily="@font/poppins_light"
+                tools:text="0" />
+
+            <Button
+                android:id="@+id/bt_checkout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:backgroundTint="@color/brown"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Checkout"
+                android:textAllCaps="false"
+                android:paddingVertical="14dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_price"
+                app:cornerRadius="8dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

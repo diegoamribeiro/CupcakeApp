@@ -50,7 +50,7 @@ class CartFragment : Fragment() {
             val totalQuantity = allCupcakes.sumBy { 1 } // Ou allCupcakes.size
             val totalPrice = allCupcakes.sumByDouble { it.price }
 
-            binding.tvQuantity.text = totalQuantity.toString()
+            //binding.tvQuantity.text = totalQuantity.toString()
             binding.tvPrice.text = "R$ ${twoDecimals(totalPrice)}"
 
             // Agrupa os cupcakes pelo sabor e pega um de cada sabor
