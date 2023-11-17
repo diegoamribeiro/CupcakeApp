@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
@@ -26,13 +27,13 @@ public final class FragmentCartBinding implements ViewBinding {
   public final Button btCheckout;
 
   @NonNull
+  public final CardView cvBottom;
+
+  @NonNull
   public final ImageView ivEmptyCart;
 
   @NonNull
   public final TextView labelPrice;
-
-  @NonNull
-  public final TextView labelQuantity;
 
   @NonNull
   public final RecyclerView rvList;
@@ -43,22 +44,17 @@ public final class FragmentCartBinding implements ViewBinding {
   @NonNull
   public final TextView tvPrice;
 
-  @NonNull
-  public final TextView tvQuantity;
-
   private FragmentCartBinding(@NonNull ConstraintLayout rootView, @NonNull Button btCheckout,
-      @NonNull ImageView ivEmptyCart, @NonNull TextView labelPrice, @NonNull TextView labelQuantity,
-      @NonNull RecyclerView rvList, @NonNull TextView tvEmptyCart, @NonNull TextView tvPrice,
-      @NonNull TextView tvQuantity) {
+      @NonNull CardView cvBottom, @NonNull ImageView ivEmptyCart, @NonNull TextView labelPrice,
+      @NonNull RecyclerView rvList, @NonNull TextView tvEmptyCart, @NonNull TextView tvPrice) {
     this.rootView = rootView;
     this.btCheckout = btCheckout;
+    this.cvBottom = cvBottom;
     this.ivEmptyCart = ivEmptyCart;
     this.labelPrice = labelPrice;
-    this.labelQuantity = labelQuantity;
     this.rvList = rvList;
     this.tvEmptyCart = tvEmptyCart;
     this.tvPrice = tvPrice;
-    this.tvQuantity = tvQuantity;
   }
 
   @Override
@@ -94,6 +90,12 @@ public final class FragmentCartBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.cv_bottom;
+      CardView cvBottom = ViewBindings.findChildViewById(rootView, id);
+      if (cvBottom == null) {
+        break missingId;
+      }
+
       id = R.id.iv_empty_cart;
       ImageView ivEmptyCart = ViewBindings.findChildViewById(rootView, id);
       if (ivEmptyCart == null) {
@@ -103,12 +105,6 @@ public final class FragmentCartBinding implements ViewBinding {
       id = R.id.label_price;
       TextView labelPrice = ViewBindings.findChildViewById(rootView, id);
       if (labelPrice == null) {
-        break missingId;
-      }
-
-      id = R.id.label_quantity;
-      TextView labelQuantity = ViewBindings.findChildViewById(rootView, id);
-      if (labelQuantity == null) {
         break missingId;
       }
 
@@ -130,14 +126,8 @@ public final class FragmentCartBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.tv_quantity;
-      TextView tvQuantity = ViewBindings.findChildViewById(rootView, id);
-      if (tvQuantity == null) {
-        break missingId;
-      }
-
-      return new FragmentCartBinding((ConstraintLayout) rootView, btCheckout, ivEmptyCart,
-          labelPrice, labelQuantity, rvList, tvEmptyCart, tvPrice, tvQuantity);
+      return new FragmentCartBinding((ConstraintLayout) rootView, btCheckout, cvBottom, ivEmptyCart,
+          labelPrice, rvList, tvEmptyCart, tvPrice);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

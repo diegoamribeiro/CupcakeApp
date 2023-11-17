@@ -31,12 +31,16 @@
         tools:layout="@layout/fragment_cart" >
         <action
             android:id="@+id/action_nav_cart_to_vav_adress"
-            app:destination="@id/vav_adress" />
+            app:destination="@id/nav_adress" />
     </fragment>
     <fragment
-        android:id="@+id/vav_adress"
+        android:id="@+id/nav_adress"
         android:name="com.dmribeiro87.cupcakeapp.AdressFragment"
         android:label="fragment_adress"
-        tools:layout="@layout/fragment_adress" />
+        tools:layout="@layout/fragment_adress" >
+        <argument
+            android:name="currentOrder"
+            app:argType="com.dmribeiro87.model.Order" />
+    </fragment>
 
 </navigation>

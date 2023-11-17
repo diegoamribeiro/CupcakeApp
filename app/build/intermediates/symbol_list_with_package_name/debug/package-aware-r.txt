@@ -3108,6 +3108,14 @@ drawable rounded_square_badge_icon
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+font poppins_black
+font poppins_blackitalic
+font poppins_bold
+font poppins_bolditalic
+font poppins_extrabold
+font poppins_extrabolditalic
+font poppins_extralight
+font poppins_light
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -3176,6 +3184,7 @@ id action_menu_presenter
 id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
+id action_nav_cart_to_vav_adress
 id action_nav_home_to_detailsFragment
 id action_text
 id actions
@@ -3259,6 +3268,7 @@ id currentState
 id custom
 id customPanel
 id cut
+id cv_bottom
 id cv_flavour
 id cv_price
 id cv_quantity
@@ -3362,7 +3372,6 @@ id jumpToEnd
 id jumpToStart
 id label_flavour
 id label_price
-id label_quantity
 id labeled
 id layout
 id left
@@ -3436,6 +3445,7 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
+id nav_adress
 id nav_cart
 id nav_controller_view_tag
 id nav_details
@@ -3786,6 +3796,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout fragment_adress
 layout fragment_cart
 layout fragment_details
 layout fragment_home

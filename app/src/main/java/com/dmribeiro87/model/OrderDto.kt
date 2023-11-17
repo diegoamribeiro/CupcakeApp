@@ -9,7 +9,13 @@ data class Order(
     val orderId: String = "",
     val list: List<Cupcake> = emptyList(), // Agora com um valor padrão
     val date: Timestamp? = null, // Usando Timestamp do Firebase
+    val total: Double? = null,
     val client: Client? = null
+) : Serializable
+
+data class Client(
+    val name: String = "",
+    val address: Address? = null
 ) : Serializable
 
 data class Address(
@@ -29,10 +35,4 @@ data class Cupcake(
     val description: String = "",
     val image: String = "",
     val weight: Int = 0
-) : Serializable
-
-
-data class Client(
-    val name: String = "",
-    val address: Address? = null
 ) : Serializable

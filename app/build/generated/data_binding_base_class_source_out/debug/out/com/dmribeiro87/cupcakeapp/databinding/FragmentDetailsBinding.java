@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.widget.NestedScrollView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.dmribeiro87.cupcakeapp.R;
@@ -20,7 +21,7 @@ import java.lang.String;
 
 public final class FragmentDetailsBinding implements ViewBinding {
   @NonNull
-  private final ConstraintLayout rootView;
+  private final NestedScrollView rootView;
 
   @NonNull
   public final Button btAddCart;
@@ -46,7 +47,7 @@ public final class FragmentDetailsBinding implements ViewBinding {
   @NonNull
   public final TextView tvPrice;
 
-  private FragmentDetailsBinding(@NonNull ConstraintLayout rootView, @NonNull Button btAddCart,
+  private FragmentDetailsBinding(@NonNull NestedScrollView rootView, @NonNull Button btAddCart,
       @NonNull CardView cvFlavour, @NonNull ConstraintLayout cvPrice, @NonNull ImageView ivCupcake,
       @NonNull TextView labelFlavour, @NonNull TextView tvDescription, @NonNull TextView tvFlavour,
       @NonNull TextView tvPrice) {
@@ -63,7 +64,7 @@ public final class FragmentDetailsBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public ConstraintLayout getRoot() {
+  public NestedScrollView getRoot() {
     return rootView;
   }
 
@@ -136,7 +137,7 @@ public final class FragmentDetailsBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentDetailsBinding((ConstraintLayout) rootView, btAddCart, cvFlavour, cvPrice,
+      return new FragmentDetailsBinding((NestedScrollView) rootView, btAddCart, cvFlavour, cvPrice,
           ivCupcake, labelFlavour, tvDescription, tvFlavour, tvPrice);
     }
     String missingId = rootView.getResources().getResourceName(id);

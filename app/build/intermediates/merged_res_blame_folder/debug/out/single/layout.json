@@ -1,7 +1,15 @@
 [
     {
+        "merged": "com.dmribeiro87.cupcakeapp-mergeDebugResources-53:/layout/fragment_details.xml",
+        "source": "com.dmribeiro87.cupcakeapp-main-56:/layout/fragment_details.xml"
+    },
+    {
         "merged": "com.dmribeiro87.cupcakeapp-mergeDebugResources-53:/layout/fragment_cart.xml",
         "source": "com.dmribeiro87.cupcakeapp-main-56:/layout/fragment_cart.xml"
+    },
+    {
+        "merged": "/Users/diegoribeiro/.gradle/daemon/8.0/com.dmribeiro87.cupcakeapp-mergeDebugResources-53:/layout/fragment_adress.xml",
+        "source": "/Users/diegoribeiro/.gradle/daemon/8.0/com.dmribeiro87.cupcakeapp-main-56:/layout/fragment_adress.xml"
     },
     {
         "merged": "/Users/diegoribeiro/.gradle/daemon/8.0/com.dmribeiro87.cupcakeapp-mergeDebugResources-53:/layout/action_bar_cart_icon.xml",

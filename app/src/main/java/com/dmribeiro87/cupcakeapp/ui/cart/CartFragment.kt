@@ -15,6 +15,7 @@ import com.dmribeiro87.cupcakeapp.ui.home.HomeFragmentDirections
 import com.dmribeiro87.cupcakeapp.utils.twoDecimals
 import com.dmribeiro87.cupcakeapp.utils.viewBinding
 import com.dmribeiro87.model.Cupcake
+import com.dmribeiro87.model.Order
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class CartFragment : Fragment() {
@@ -70,17 +71,6 @@ class CartFragment : Fragment() {
         }
     }
 
-    private fun updateCartVisibility(isEmpty: Boolean) {
-        if (isEmpty) {
-            binding.ivEmptyCart.visibility = View.VISIBLE
-            binding.tvEmptyCart.visibility = View.VISIBLE
-        } else {
-            binding.ivEmptyCart.visibility = View.GONE
-            binding.tvEmptyCart.visibility = View.GONE
-        }
-    }
-
-
     private fun setupRecyclerView() {
         cartAdapter = CartAdapter().apply {
             setActionAdd {cupcake ->
@@ -94,6 +84,27 @@ class CartFragment : Fragment() {
         }
         binding.rvList.layoutManager = LinearLayoutManager(requireContext())
         binding.rvList.adapter = cartAdapter
+    }
+
+    private fun newOrder(order: Order) {
+
+    }
+
+    private fun setListeners() {
+        binding.btCheckout.setOnClickListener {
+            //val action = CartFragmentDirections.actionNavCartToVavAdress()
+            //NavHostFragment.findNavController(this).navigate(action)
+        }
+    }
+
+    private fun updateCartVisibility(isEmpty: Boolean) {
+        if (isEmpty) {
+            binding.ivEmptyCart.visibility = View.VISIBLE
+            binding.tvEmptyCart.visibility = View.VISIBLE
+        } else {
+            binding.ivEmptyCart.visibility = View.GONE
+            binding.tvEmptyCart.visibility = View.GONE
+        }
     }
 
 }
