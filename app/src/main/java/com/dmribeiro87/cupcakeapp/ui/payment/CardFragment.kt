@@ -44,6 +44,7 @@ class CardFragment : Fragment() {
     // Incomplete
 
     private fun addObserver() {
+
         binding.edtNumberCard.addTextChangedListener(object : TextWatcher {
             var isUpdating = false
 

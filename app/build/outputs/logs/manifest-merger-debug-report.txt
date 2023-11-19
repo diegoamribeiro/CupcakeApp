@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:2:1-32:12
-INJECTED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:2:1-32:12
-INJECTED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:2:1-32:12
-INJECTED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:2:1-32:12
+ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:2:1-33:12
 MERGED from [androidx.databinding:viewbinding:8.1.0] /Users/diegoribeiro/.gradle/caches/transforms-3/36922463d32d0a26925bfcbbbff31c09/transformed/viewbinding-8.1.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.navigation:navigation-common:2.6.0] /Users/diegoribeiro/.gradle/caches/transforms-3/107cef56938f19cde682077dcefc854c/transformed/navigation-common-2.6.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-common-ktx:2.6.0] /Users/diegoribeiro/.gradle/caches/transforms-3/73fb66cd890c8cf8e2e5c8b56ae02976/transformed/navigation-common-ktx-2.6.0/AndroidManifest.xml:17:1-22:12
@@ -138,8 +138,8 @@ MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.3.0] /U
 	android:name
 		ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:5:22-64
 application
-ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:7:5-30:19
-INJECTED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:7:5-30:19
+ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:7:5-31:19
+INJECTED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:7:5-31:19
 MERGED from [com.google.android.material:material:1.9.0] /Users/diegoribeiro/.gradle/caches/transforms-3/cf6a6a696872ebd4c8f35f3a3e3a5ea5/transformed/material-1.9.0/AndroidManifest.xml:24:5-20
 MERGED from [com.google.android.material:material:1.9.0] /Users/diegoribeiro/.gradle/caches/transforms-3/cf6a6a696872ebd4c8f35f3a3e3a5ea5/transformed/material-1.9.0/AndroidManifest.xml:24:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/diegoribeiro/.gradle/caches/transforms-3/33ba7ef997aef651f44a2d28fdfc74e5/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
@@ -239,27 +239,29 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/dieg
 	android:name
 		ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:8:9-38
 activity#com.dmribeiro87.cupcakeapp.MainActivity
-ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:18:9-29:20
+ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:18:9-30:20
 	android:screenOrientation
-		ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:22:13-51
+		ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:23:13-51
 	android:label
 		ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:21:13-45
+	android:windowSoftInputMode
+		ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:22:13-55
 	android:exported
 		ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:20:13-36
 	android:theme
-		ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:23:13-52
+		ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:24:13-52
 	android:name
 		ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:19:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:24:13-28:29
+ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:25:13-29:29
 action#android.intent.action.MAIN
-ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:25:17-69
+ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:26:17-69
 	android:name
-		ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:25:25-66
+		ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:26:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:27:17-77
+ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:28:17-77
 	android:name
-		ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:27:27-74
+		ADDED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml:28:27-74
 uses-sdk
 INJECTED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/src/main/AndroidManifest.xml

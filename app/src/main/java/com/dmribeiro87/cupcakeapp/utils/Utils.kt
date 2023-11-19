@@ -1,13 +1,9 @@
 package com.dmribeiro87.cupcakeapp.utils
 
+import com.google.firebase.installations.Utils
+
 fun twoDecimals(value: Double): String {
     return String.format("%.2f", value).replace(".", ",")
-}
-
-fun formatCreditCardNumber(cardNumber: String): String {
-    return cardNumber.replace("\\s+".toRegex(), "") // Remove espaços existentes
-        .chunked(4)                   // Divide a string em pedaços de 4 caracteres
-        .joinToString(" ")            // Junta os pedaços com um espaço entre eles
 }
 
 fun formatCardExpiryDate(date: String): String {
@@ -19,4 +15,31 @@ fun formatCardExpiryDate(date: String): String {
     } else {
         cleanDate
     }
+}
+
+fun formatCreditCardNumber(cardNumber: String): String {
+    val cleaned = cardNumber.replace("\\s".toRegex(), "")
+    val regex = Regex("(.{1,4})")
+    return cleaned.replace(regex, "$1 ").trim()
+}
+
+private fun process(mask: String, text: String): String{
+    val number = onlyNumbers(text.trim()).toCharArray()
+    var textMask = ""
+    var numberIndex = 0
+    for (maskItem in mask) {
+        if (maskItem != '#') {
+            textMask += maskItem
+        } else if(numberIndex < number.size) {
+            textMask += number[numberIndex]
+            numberIndex++
+        } else {
+            break
+        }
+    }
+    return textMask
+}
+
+fun onlyNumbers(numberWithMask: String): String {
+    return Regex("[^0-9]").replace(numberWithMask, "")
 }
