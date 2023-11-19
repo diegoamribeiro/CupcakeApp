@@ -7,5 +7,6 @@
     <color name="brown">#795443</color>
     <color name="component_text">#191919</color>
     <color name="translucent">#00FFFFFF</color>
+    <color name="light_brown">#E3DCD9</color>
 
 </resources>

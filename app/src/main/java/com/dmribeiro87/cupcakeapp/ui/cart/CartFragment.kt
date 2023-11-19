@@ -37,6 +37,7 @@ class CartFragment : Fragment() {
         viewModel.loadOrders()
         setupRecyclerView()
         addObserver()
+        setListeners()
     }
 
     private fun addObserver() {
@@ -48,11 +49,11 @@ class CartFragment : Fragment() {
             val allCupcakes = ordersList.flatMap { it.list }
 
             // Calcula a quantidade total e o preço total
-            val totalQuantity = allCupcakes.sumBy { 1 } // Ou allCupcakes.size
             val totalPrice = allCupcakes.sumByDouble { it.price }
 
             //binding.tvQuantity.text = totalQuantity.toString()
             binding.tvPrice.text = "R$ ${twoDecimals(totalPrice)}"
+            viewModel.updateOrderTotal("unique-order-of-the-galaxy", totalPrice)
 
             // Agrupa os cupcakes pelo sabor e pega um de cada sabor
             val uniqueCupcakes = allCupcakes.groupBy { it.flavor }
@@ -86,15 +87,15 @@ class CartFragment : Fragment() {
         binding.rvList.adapter = cartAdapter
     }
 
-    private fun newOrder(order: Order) {
-
-    }
-
     private fun setListeners() {
         binding.btCheckout.setOnClickListener {
-            //val action = CartFragmentDirections.actionNavCartToVavAdress()
-            //NavHostFragment.findNavController(this).navigate(action)
+            goToAddress("unique-order-of-the-galaxy")
         }
+    }
+
+    private fun goToAddress(orderId: String) {
+        val action = CartFragmentDirections.actionNavCartToVavAdress(orderId)
+        NavHostFragment.findNavController(this).navigate(action)
     }
 
     private fun updateCartVisibility(isEmpty: Boolean) {

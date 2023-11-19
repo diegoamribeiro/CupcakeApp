@@ -1,6 +1,7 @@
 package com.dmribeiro87.cupcakeapp
 
 import android.util.Log
+import com.dmribeiro87.model.Address
 import com.dmribeiro87.model.Cupcake
 import com.dmribeiro87.model.Order
 import com.google.firebase.Timestamp
@@ -14,6 +15,23 @@ class CupcakeRepository {
 
     private val db: FirebaseFirestore = Firebase.firestore
 
+    fun updateOrder(orderId: String, update: Map<String, Any>) {
+        val orderRef = db.collection("orders").document(orderId)
+
+        db.runTransaction { transaction ->
+            val snapshot = transaction.get(orderRef)
+            if (snapshot.exists()) {
+                transaction.update(orderRef, update)
+            } else {
+                // Trate o caso em que o pedido não existe
+            }
+        }.addOnSuccessListener {
+            Log.d("CupcakeRepository", "Pedido atualizado com sucesso.")
+        }.addOnFailureListener { e ->
+            Log.e("CupcakeRepository", "Erro ao atualizar o pedido.", e)
+        }
+    }
+
     suspend fun addCupcakeMocked(cupcake: Cupcake) {
         try {
             db.collection("cupcakes")
@@ -22,29 +40,6 @@ class CupcakeRepository {
             println("Cupcake adicionado com sucesso!")
         } catch (e: Exception) {
             println("Erro ao adicionar cupcake: ${e.message}")
-        }
-    }
-
-    fun addCupcakeToOrder(cupcake: Cupcake, orderId: String) {
-        val orderRef = db.collection("orders").document(orderId)
-
-        db.runTransaction { transaction ->
-            val snapshot = transaction.get(orderRef)
-            val order = snapshot.toObject(Order::class.java)
-
-            order?.let {
-                val updatedCupcakes = ArrayList(it.list)
-                updatedCupcakes.add(cupcake)
-                transaction.update(orderRef, "list", updatedCupcakes)
-            } ?: run {
-                // Se o pedido não existe, cria um novo com o cupcake
-                val newOrder = Order(orderId, listOf(cupcake), Timestamp.now(), null)
-                transaction.set(orderRef, newOrder)
-            }
-        }.addOnSuccessListener {
-            Log.d("CupcakeRepository", "Cupcake added successfully to order.")
-        }.addOnFailureListener { e ->
-            Log.e("CupcakeRepository", "Error adding cupcake to order.", e)
         }
     }
 
@@ -76,6 +71,7 @@ class CupcakeRepository {
             .document(order.orderId)
             .set(order)
             .addOnSuccessListener {
+
             }
             .addOnFailureListener {
                 // Tratar erros, por exemplo, falha de conexão

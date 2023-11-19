@@ -1,6 +1,7 @@
 package com.dmribeiro87.cupcakeapp.di
 
 import com.dmribeiro87.cupcakeapp.CupcakeRepository
+import com.dmribeiro87.cupcakeapp.ui.address.AddressViewModel
 import com.dmribeiro87.cupcakeapp.ui.cart.CartViewModel
 import com.dmribeiro87.cupcakeapp.ui.details.DetailsViewModel
 import com.dmribeiro87.cupcakeapp.ui.home.HomeViewModel
@@ -12,4 +13,5 @@ val appModule = module {
     viewModel { HomeViewModel(get()) }
     viewModel { DetailsViewModel(get()) }
     viewModel { CartViewModel(get()) }
+    viewModel { AddressViewModel(get()) }
 }

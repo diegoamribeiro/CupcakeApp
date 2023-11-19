@@ -1465,6 +1465,7 @@ int color foreground_material_dark 0x7f05006c
 int color foreground_material_light 0x7f05006d
 int color highlighted_text_material_dark 0x7f05006e
 int color highlighted_text_material_light 0x7f05006f
+int color light_brown 0x7f0502fa
 int color light_gray 0x7f050070
 int color m3_appbar_overlay_color 0x7f050071
 int color m3_assist_chip_icon_tint_color 0x7f050072
@@ -3016,6 +3017,8 @@ int drawable googleg_disabled_color_18 0x7f07009f
 int drawable googleg_standard_color_18 0x7f0700a0
 int drawable ic_add 0x7f0700a1
 int drawable ic_arrow_back_black_24 0x7f0700a2
+int drawable ic_arrow_foward 0x7f070100
+int drawable ic_card 0x7f0700fe
 int drawable ic_cart 0x7f0700a3
 int drawable ic_clear_black_24 0x7f0700a4
 int drawable ic_clock_black_24dp 0x7f0700a5
@@ -3030,6 +3033,7 @@ int drawable ic_mtrl_checked_circle 0x7f0700ad
 int drawable ic_mtrl_chip_checked_black 0x7f0700ae
 int drawable ic_mtrl_chip_checked_circle 0x7f0700af
 int drawable ic_mtrl_chip_close_circle 0x7f0700b0
+int drawable ic_pix 0x7f0700ff
 int drawable ic_remove 0x7f0700b1
 int drawable ic_search_black_24 0x7f0700b2
 int drawable m3_appbar_background 0x7f0700b3
@@ -3183,6 +3187,8 @@ int id action_menu_presenter 0x7f090040
 int id action_mode_bar 0x7f090041
 int id action_mode_bar_stub 0x7f090042
 int id action_mode_close_button 0x7f090043
+int id action_nav_adress_to_nav_card_payment 0x7f09022f
+int id action_nav_adress_to_pixPaymentFragment 0x7f09022d
 int id action_nav_cart_to_vav_adress 0x7f090044
 int id action_nav_home_to_detailsFragment 0x7f090045
 int id action_text 0x7f090046
@@ -3228,6 +3234,8 @@ int id bt_add_cart 0x7f09006d
 int id bt_checkout 0x7f09006e
 int id bt_less 0x7f09006f
 int id bt_plus 0x7f090070
+int id btn_card 0x7f090222
+int id btn_pix 0x7f090223
 int id buttonPanel 0x7f090071
 int id cache_measures 0x7f090072
 int id callMeasure 0x7f090073
@@ -3307,6 +3315,13 @@ int id easeOut 0x7f0900bc
 int id east 0x7f0900bd
 int id edge 0x7f0900be
 int id edit_query 0x7f0900bf
+int id edt_city 0x7f090229
+int id edt_complement 0x7f090225
+int id edt_name 0x7f090226
+int id edt_neighborhood 0x7f09022a
+int id edt_number 0x7f090227
+int id edt_state 0x7f09022b
+int id edt_street 0x7f09022c
 int id elastic 0x7f0900c0
 int id embed 0x7f0900c1
 int id end 0x7f0900c2
@@ -3445,6 +3460,7 @@ int id mtrl_picker_title_text 0x7f090146
 int id mtrl_view_tag_bottom_padding 0x7f090147
 int id multiply 0x7f090148
 int id nav_adress 0x7f090221
+int id nav_card_payment 0x7f090230
 int id nav_cart 0x7f090149
 int id nav_controller_view_tag 0x7f09014a
 int id nav_details 0x7f09014b
@@ -3452,6 +3468,7 @@ int id nav_graph 0x7f09014c
 int id nav_home 0x7f09014d
 int id nav_host_fragment_container 0x7f09014e
 int id nav_host_fragment_content_main 0x7f09014f
+int id nav_pix_payment 0x7f09022e
 int id navigation_bar_item_active_indicator_view 0x7f090150
 int id navigation_bar_item_icon_container 0x7f090151
 int id navigation_bar_item_icon_view 0x7f090152
@@ -3635,6 +3652,7 @@ int id tv_flavour 0x7f090203
 int id tv_price 0x7f090204
 int id tv_quantity 0x7f090205
 int id tv_title 0x7f090206
+int id tv_title2 0x7f090228
 int id tv_weight 0x7f090207
 int id unchecked 0x7f090208
 int id uniform 0x7f090209
@@ -3796,9 +3814,11 @@ int layout design_navigation_menu_item 0x7f0c002d
 int layout design_text_input_end_icon 0x7f0c002e
 int layout design_text_input_start_icon 0x7f0c002f
 int layout fragment_adress 0x7f0c0030
+int layout fragment_card 0x7f0c0074
 int layout fragment_cart 0x7f0c0031
 int layout fragment_details 0x7f0c0032
 int layout fragment_home 0x7f0c0033
+int layout fragment_pix_payment 0x7f0c0073
 int layout item_cart 0x7f0c0034
 int layout item_home 0x7f0c0035
 int layout m3_alert_dialog 0x7f0c0036

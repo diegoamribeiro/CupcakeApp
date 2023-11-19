@@ -4,7 +4,6 @@ package com.dmribeiro87.cupcakeapp.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -15,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.dmribeiro87.cupcakeapp.R;
+import com.google.android.material.button.MaterialButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -24,7 +24,7 @@ public final class FragmentCartBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final Button btCheckout;
+  public final MaterialButton btCheckout;
 
   @NonNull
   public final CardView cvBottom;
@@ -44,9 +44,10 @@ public final class FragmentCartBinding implements ViewBinding {
   @NonNull
   public final TextView tvPrice;
 
-  private FragmentCartBinding(@NonNull ConstraintLayout rootView, @NonNull Button btCheckout,
-      @NonNull CardView cvBottom, @NonNull ImageView ivEmptyCart, @NonNull TextView labelPrice,
-      @NonNull RecyclerView rvList, @NonNull TextView tvEmptyCart, @NonNull TextView tvPrice) {
+  private FragmentCartBinding(@NonNull ConstraintLayout rootView,
+      @NonNull MaterialButton btCheckout, @NonNull CardView cvBottom,
+      @NonNull ImageView ivEmptyCart, @NonNull TextView labelPrice, @NonNull RecyclerView rvList,
+      @NonNull TextView tvEmptyCart, @NonNull TextView tvPrice) {
     this.rootView = rootView;
     this.btCheckout = btCheckout;
     this.cvBottom = cvBottom;
@@ -85,7 +86,7 @@ public final class FragmentCartBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.bt_checkout;
-      Button btCheckout = ViewBindings.findChildViewById(rootView, id);
+      MaterialButton btCheckout = ViewBindings.findChildViewById(rootView, id);
       if (btCheckout == null) {
         break missingId;
       }

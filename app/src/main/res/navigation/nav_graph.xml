@@ -35,12 +35,29 @@
     </fragment>
     <fragment
         android:id="@+id/nav_adress"
-        android:name="com.dmribeiro87.cupcakeapp.AdressFragment"
-        android:label="fragment_adress"
+        android:name="com.dmribeiro87.cupcakeapp.ui.address.AddressFragment"
+        android:label="Endereço"
         tools:layout="@layout/fragment_adress" >
+
         <argument
-            android:name="currentOrder"
-            app:argType="com.dmribeiro87.model.Order" />
+            android:name="orderId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_nav_adress_to_pixPaymentFragment"
+            app:destination="@id/nav_pix_payment" />
+        <action
+            android:id="@+id/action_nav_adress_to_nav_card_payment"
+            app:destination="@id/nav_card_payment" />
     </fragment>
+    <fragment
+        android:id="@+id/nav_pix_payment"
+        android:name="com.dmribeiro87.cupcakeapp.ui.payment.PixPaymentFragment"
+        android:label="Pix"
+        tools:layout="@layout/fragment_pix_payment" />
+    <fragment
+        android:id="@+id/nav_card_payment"
+        android:name="com.dmribeiro87.cupcakeapp.ui.payment.CardFragment"
+        android:label="Cartão"
+        tools:layout="@layout/fragment_card" />
 
 </navigation>

@@ -35,8 +35,29 @@
     </fragment>
     <fragment
         android:id="@+id/nav_adress"
-        android:name="com.dmribeiro87.cupcakeapp.AdressFragment"
+        android:name="com.dmribeiro87.cupcakeapp.ui.address.AddressFragment"
         android:label="fragment_adress"
-        tools:layout="@layout/fragment_adress" />
+        tools:layout="@layout/fragment_adress" >
+
+        <argument
+            android:name="orderId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_nav_adress_to_pixPaymentFragment"
+            app:destination="@id/nav_pix_payment" />
+        <action
+            android:id="@+id/action_nav_adress_to_nav_card_payment"
+            app:destination="@id/nav_card_payment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_pix_payment"
+        android:name="com.dmribeiro87.cupcakeapp.PixPaymentFragment"
+        android:label="fragment_pix_payment"
+        tools:layout="@layout/fragment_pix_payment" />
+    <fragment
+        android:id="@+id/nav_card_payment"
+        android:name="com.dmribeiro87.cupcakeapp.CardFragment"
+        android:label="fragment_card"
+        tools:layout="@layout/fragment_card" />
 
 </navigation>

@@ -58,6 +58,20 @@ class CartViewModel(private val repository: CupcakeRepository) : ViewModel() {
         }
     }
 
+    fun updateOrderTotal(orderId: String, newTotal: Double) {
+        viewModelScope.launch {
+            try {
+                val existingOrder = repository.getOrderById(orderId)
+                existingOrder?.let { order ->
+                    val updatedOrder = order.copy(total = newTotal)
+                    repository.createOrUpdateOrder(updatedOrder)
+                }
+            } catch (e: Exception) {
+                // Trate exceções
+            }
+        }
+    }
+
 
     fun removeCupcakeFromOrder(cupcake: Cupcake) {
         val orderId = "unique-order-of-the-galaxy"
