@@ -53,11 +53,24 @@
         android:id="@+id/nav_pix_payment"
         android:name="com.dmribeiro87.cupcakeapp.ui.payment.PixPaymentFragment"
         android:label="Pix"
-        tools:layout="@layout/fragment_pix_payment" />
+        tools:layout="@layout/fragment_pix_payment" >
+        <action
+            android:id="@+id/action_nav_pix_payment_to_nav_success"
+            app:destination="@id/nav_success" />
+    </fragment>
     <fragment
         android:id="@+id/nav_card_payment"
         android:name="com.dmribeiro87.cupcakeapp.ui.payment.CardFragment"
         android:label="Cartão"
-        tools:layout="@layout/fragment_card" />
+        tools:layout="@layout/fragment_card" >
+        <action
+            android:id="@+id/action_nav_card_payment_to_nav_success"
+            app:destination="@id/nav_success" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_success"
+        android:name="com.dmribeiro87.cupcakeapp.ui.success.SuccessFragment"
+        android:label="fragment_success"
+        tools:layout="@layout/fragment_success" />
 
 </navigation>

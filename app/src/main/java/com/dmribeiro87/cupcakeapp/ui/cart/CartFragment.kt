@@ -42,6 +42,7 @@ class CartFragment : Fragment() {
 
     private fun addObserver() {
         viewModel.orders.observe(viewLifecycleOwner) { ordersList ->
+            binding.btCheckout.isEnabled = ordersList.isNotEmpty()
             // Define o orderId a partir do primeiro pedido da lista, se existir
             orderId = ordersList.firstOrNull()?.orderId.orEmpty()
 
@@ -69,6 +70,14 @@ class CartFragment : Fragment() {
 
             // Atualiza a visibilidade dos elementos de UI
             updateCartVisibility(ordersList.isEmpty())
+        }
+
+        viewModel.progress.observe(viewLifecycleOwner){ visible ->
+            if (visible){
+                binding.pbCart.visibility = View.VISIBLE
+            }else{
+                binding.pbCart.visibility = View.GONE
+            }
         }
     }
 

@@ -11,6 +11,9 @@ import kotlinx.coroutines.launch
 
 class HomeViewModel(private val repository: CupcakeRepository) : ViewModel(){
 
+    private var _progress = MutableLiveData<Boolean>()
+    val progress: LiveData<Boolean> = _progress
+
     private val _cupcakes = MutableLiveData<List<Cupcake>>()
     val cupcakes: LiveData<List<Cupcake>> = _cupcakes
 
@@ -39,9 +42,11 @@ class HomeViewModel(private val repository: CupcakeRepository) : ViewModel(){
     }
 
     fun getCupcakes() {
+        _progress.value = true
         viewModelScope.launch {
             val cupcakes = repository.getCupcakes()
             _cupcakes.value = cupcakes
+            _progress.value = false
         }
     }
 }

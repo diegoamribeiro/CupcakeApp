@@ -16,6 +16,10 @@
         "source": "/Users/diegoribeiro/.gradle/daemon/8.0/com.dmribeiro87.cupcakeapp-main-56:/layout/fragment_home.xml"
     },
     {
+        "merged": "com.dmribeiro87.cupcakeapp-merged_res-54:/layout_fragment_cart.xml.flat",
+        "source": "com.dmribeiro87.cupcakeapp-main-56:/layout/fragment_cart.xml"
+    },
+    {
         "merged": "/Users/diegoribeiro/.gradle/daemon/8.0/com.dmribeiro87.cupcakeapp-merged_res-54:/xml_data_extraction_rules.xml.flat",
         "source": "/Users/diegoribeiro/.gradle/daemon/8.0/com.dmribeiro87.cupcakeapp-main-56:/xml/data_extraction_rules.xml"
     },
@@ -80,12 +84,12 @@
         "source": "/Users/diegoribeiro/.gradle/daemon/8.0/com.dmribeiro87.cupcakeapp-main-56:/drawable/ic_cart.xml"
     },
     {
-        "merged": "/Users/diegoribeiro/.gradle/daemon/8.0/com.dmribeiro87.cupcakeapp-merged_res-54:/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "/Users/diegoribeiro/.gradle/daemon/8.0/com.dmribeiro87.cupcakeapp-main-56:/mipmap-mdpi/ic_launcher.webp"
-    },
-    {
         "merged": "/Users/diegoribeiro/.gradle/daemon/8.0/com.dmribeiro87.cupcakeapp-merged_res-54:/font_poppins_light.ttf.flat",
         "source": "/Users/diegoribeiro/.gradle/daemon/8.0/com.dmribeiro87.cupcakeapp-main-56:/font/poppins_light.ttf"
+    },
+    {
+        "merged": "/Users/diegoribeiro/.gradle/daemon/8.0/com.dmribeiro87.cupcakeapp-merged_res-54:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "/Users/diegoribeiro/.gradle/daemon/8.0/com.dmribeiro87.cupcakeapp-main-56:/mipmap-mdpi/ic_launcher.webp"
     },
     {
         "merged": "/Users/diegoribeiro/.gradle/daemon/8.0/com.dmribeiro87.cupcakeapp-merged_res-54:/drawable_background_rounded.xml.flat",
@@ -98,6 +102,10 @@
     {
         "merged": "/Users/diegoribeiro/.gradle/daemon/8.0/com.dmribeiro87.cupcakeapp-merged_res-54:/drawable_ic_empty_cart.xml.flat",
         "source": "/Users/diegoribeiro/.gradle/daemon/8.0/com.dmribeiro87.cupcakeapp-main-56:/drawable/ic_empty_cart.xml"
+    },
+    {
+        "merged": "/Users/diegoribeiro/.gradle/daemon/8.0/com.dmribeiro87.cupcakeapp-merged_res-54:/drawable_ic_check_green_white.xml.flat",
+        "source": "/Users/diegoribeiro/.gradle/daemon/8.0/com.dmribeiro87.cupcakeapp-main-56:/drawable/ic_check_green_white.xml"
     },
     {
         "merged": "/Users/diegoribeiro/.gradle/daemon/8.0/com.dmribeiro87.cupcakeapp-merged_res-54:/xml_backup_rules.xml.flat",
@@ -188,6 +196,10 @@
         "source": "/Users/diegoribeiro/.gradle/daemon/8.0/com.dmribeiro87.cupcakeapp-main-56:/mipmap-xxxhdpi/ic_launcher.webp"
     },
     {
+        "merged": "/Users/diegoribeiro/.gradle/daemon/8.0/com.dmribeiro87.cupcakeapp-merged_res-54:/layout_fragment_success.xml.flat",
+        "source": "/Users/diegoribeiro/.gradle/daemon/8.0/com.dmribeiro87.cupcakeapp-main-56:/layout/fragment_success.xml"
+    },
+    {
         "merged": "/Users/diegoribeiro/.gradle/daemon/8.0/com.dmribeiro87.cupcakeapp-merged_res-54:/font_poppins_extrabolditalic.ttf.flat",
         "source": "/Users/diegoribeiro/.gradle/daemon/8.0/com.dmribeiro87.cupcakeapp-main-56:/font/poppins_extrabolditalic.ttf"
     },
@@ -198,9 +210,5 @@
     {
         "merged": "/Users/diegoribeiro/.gradle/daemon/8.0/com.dmribeiro87.cupcakeapp-merged_res-54:/drawable_cupcake_chocolate_img.png.flat",
         "source": "/Users/diegoribeiro/.gradle/daemon/8.0/com.dmribeiro87.cupcakeapp-main-56:/drawable/cupcake_chocolate_img.png"
-    },
-    {
-        "merged": "com.dmribeiro87.cupcakeapp-merged_res-54:/layout_fragment_card.xml.flat",
-        "source": "com.dmribeiro87.cupcakeapp-main-56:/layout/fragment_card.xml"
     }
 ]

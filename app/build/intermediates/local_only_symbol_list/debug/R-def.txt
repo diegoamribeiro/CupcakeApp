@@ -19,6 +19,7 @@ drawable ic_add
 drawable ic_arrow_foward
 drawable ic_card
 drawable ic_cart
+drawable ic_check_green_white
 drawable ic_empty_cart
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -36,8 +37,10 @@ font poppins_light
 id action_cart
 id action_nav_adress_to_nav_card_payment
 id action_nav_adress_to_pixPaymentFragment
+id action_nav_card_payment_to_nav_success
 id action_nav_cart_to_vav_adress
 id action_nav_home_to_detailsFragment
+id action_nav_pix_payment_to_nav_success
 id bt_add_cart
 id bt_checkout
 id bt_copy
@@ -66,6 +69,7 @@ id iv_cupcake
 id iv_empty_cart
 id iv_icon
 id iv_logo
+id iv_success
 id label_flavour
 id label_price
 id nav_adress
@@ -76,6 +80,9 @@ id nav_graph
 id nav_home
 id nav_host_fragment_content_main
 id nav_pix_payment
+id nav_success
+id pb_cart
+id pb_home
 id rvList
 id tv_counter
 id tv_description
@@ -83,6 +90,7 @@ id tv_empty_cart
 id tv_flavour
 id tv_price
 id tv_quantity
+id tv_success
 id tv_title
 id tv_title2
 id tv_weight
@@ -94,6 +102,7 @@ layout fragment_cart
 layout fragment_details
 layout fragment_home
 layout fragment_pix_payment
+layout fragment_success
 layout item_cart
 layout item_home
 menu menu_cart

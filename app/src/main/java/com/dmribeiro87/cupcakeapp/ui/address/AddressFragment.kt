@@ -23,7 +23,6 @@ class AddressFragment : Fragment() {
     private val binding: FragmentAdressBinding by viewBinding()
     private val args: AddressFragmentArgs by navArgs()
     private val viewModel: AddressViewModel by viewModel()
-    private val provider = CupcakeRepository()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

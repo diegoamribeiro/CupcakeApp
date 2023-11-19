@@ -40,7 +40,6 @@
         android:layout_marginTop="16dp"
         android:background="@color/light_brown"
         android:hint="Número do Cartão"
-        android:maxLength="20"
         android:inputType="number"
         android:padding="12dp"
         app:layout_constraintEnd_toEndOf="parent"

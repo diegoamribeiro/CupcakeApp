@@ -97,6 +97,14 @@ class HomeFragment : Fragment() {
                 menuNotificationTextView?.visibility = View.GONE
             }
         }
+
+        viewModel.progress.observe(viewLifecycleOwner){ visible ->
+            if (visible){
+                binding.pbHome.visibility = View.VISIBLE
+            }else{
+                binding.pbHome.visibility = View.GONE
+            }
+        }
     }
 
     private fun setupRecyclerView() {

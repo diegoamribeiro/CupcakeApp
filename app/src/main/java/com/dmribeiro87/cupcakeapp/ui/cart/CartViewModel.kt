@@ -18,39 +18,22 @@ class CartViewModel(private val repository: CupcakeRepository) : ViewModel() {
 
     private val _orders = MutableLiveData<List<Order>>(emptyList())
     val orders: LiveData<List<Order>> = _orders
-    private val selectedCupcakes = mutableListOf<Cupcake>()
-    private val _currentSelection = MutableLiveData<List<Cupcake>>()
-    private var currentOrderId: String? = null
+    private var _progress = MutableLiveData<Boolean>()
+    val progress: LiveData<Boolean> = _progress
 
 
     fun loadOrders() {
+        _progress.value = true
         viewModelScope.launch {
             repository.getAllOrders { ordersList ->
                 _orders.value = ordersList
+                _progress.value = false
             }
         }
-    }
-
-    fun updatePaymentType(orderId: String, paymentType: PaymentType) {
-        viewModelScope.launch {
-            try {
-                val existingOrder = repository.getOrderById(orderId)
-                existingOrder?.let { order ->
-                    val updatedOrder = order.copy(paymentType = paymentType)
-                    repository.createOrUpdateOrder(updatedOrder)
-                }
-            } catch (e: Exception) {
-                // Trate exceções
-            }
-        }
-    }
-
-    fun initializeOrAddCupcakeToSelection(cupcake: Cupcake) {
-        selectedCupcakes.add(cupcake)
-        _currentSelection.value = selectedCupcakes
     }
 
     fun addCupcakeToOrder(cupcake: Cupcake) {
+        _progress.value = true
         val orderId = "unique-order-of-the-galaxy"
 
         viewModelScope.launch {
@@ -67,6 +50,7 @@ class CartViewModel(private val repository: CupcakeRepository) : ViewModel() {
                 )
                 repository.createOrUpdateOrder(newOrder)
                 loadOrders() // Recarrega os pedidos para refletir as mudanças
+                _progress.value = false
             } catch (e: Exception) {
                 // Trate a exceção
             }
@@ -109,22 +93,6 @@ class CartViewModel(private val repository: CupcakeRepository) : ViewModel() {
             } catch (e: Exception) {
                 // Trate a exceção
             }
-        }
-    }
-
-    fun createOrderForCheckout() {
-        // Se nenhum cupcake foi selecionado, não criamos um pedido
-        if (selectedCupcakes.isNotEmpty()) {
-            val newOrder = Order(
-                orderId = UUID.randomUUID().toString(),
-                list = selectedCupcakes.toList(),
-                date = null,
-                client = Client("", Address("", "", "", "", "", "")) // Cliente vazio por enquanto
-            )
-            repository.createOrUpdateOrder(newOrder)
-            // Limpa a seleção após a criação do pedido
-            selectedCupcakes.clear()
-            _currentSelection.value = selectedCupcakes
         }
     }
 }

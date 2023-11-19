@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -36,6 +37,9 @@ public final class FragmentCartBinding implements ViewBinding {
   public final TextView labelPrice;
 
   @NonNull
+  public final ProgressBar pbCart;
+
+  @NonNull
   public final RecyclerView rvList;
 
   @NonNull
@@ -46,13 +50,14 @@ public final class FragmentCartBinding implements ViewBinding {
 
   private FragmentCartBinding(@NonNull ConstraintLayout rootView,
       @NonNull MaterialButton btCheckout, @NonNull CardView cvBottom,
-      @NonNull ImageView ivEmptyCart, @NonNull TextView labelPrice, @NonNull RecyclerView rvList,
-      @NonNull TextView tvEmptyCart, @NonNull TextView tvPrice) {
+      @NonNull ImageView ivEmptyCart, @NonNull TextView labelPrice, @NonNull ProgressBar pbCart,
+      @NonNull RecyclerView rvList, @NonNull TextView tvEmptyCart, @NonNull TextView tvPrice) {
     this.rootView = rootView;
     this.btCheckout = btCheckout;
     this.cvBottom = cvBottom;
     this.ivEmptyCart = ivEmptyCart;
     this.labelPrice = labelPrice;
+    this.pbCart = pbCart;
     this.rvList = rvList;
     this.tvEmptyCart = tvEmptyCart;
     this.tvPrice = tvPrice;
@@ -109,6 +114,12 @@ public final class FragmentCartBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.pb_cart;
+      ProgressBar pbCart = ViewBindings.findChildViewById(rootView, id);
+      if (pbCart == null) {
+        break missingId;
+      }
+
       id = R.id.rvList;
       RecyclerView rvList = ViewBindings.findChildViewById(rootView, id);
       if (rvList == null) {
@@ -128,7 +139,7 @@ public final class FragmentCartBinding implements ViewBinding {
       }
 
       return new FragmentCartBinding((ConstraintLayout) rootView, btCheckout, cvBottom, ivEmptyCart,
-          labelPrice, rvList, tvEmptyCart, tvPrice);
+          labelPrice, pbCart, rvList, tvEmptyCart, tvPrice);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

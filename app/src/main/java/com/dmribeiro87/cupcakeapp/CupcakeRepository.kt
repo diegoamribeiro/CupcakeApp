@@ -32,6 +32,17 @@ class CupcakeRepository {
         }
     }
 
+
+    fun deleteOrder(orderId: String) {
+        db.collection("orders").document(orderId).delete()
+            .addOnSuccessListener {
+                Log.d("CupcakeRepository", "Pedido deletado com sucesso.")
+            }
+            .addOnFailureListener { e ->
+                Log.e("CupcakeRepository", "Erro ao deletar pedido.", e)
+            }
+    }
+
     suspend fun addCupcakeMocked(cupcake: Cupcake) {
         try {
             db.collection("cupcakes")
