@@ -11,11 +11,6 @@ class AddressViewModel(
     private val repository: CupcakeRepository
 ): ViewModel() {
 
-    fun addAddressToOrder(orderId: String, address: Address) {
-        val update = mapOf("client.address" to address)
-        repository.updateOrder(orderId, update)
-    }
-
 
     fun addClientInfoToOrder(orderId: String, clientName: String, address: Address) {
         viewModelScope.launch {

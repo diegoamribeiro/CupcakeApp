@@ -2977,6 +2977,7 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable background_rounded
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -3233,6 +3234,8 @@ id browser_actions_menu_items
 id browser_actions_menu_view
 id bt_add_cart
 id bt_checkout
+id bt_copy
+id bt_finish
 id bt_less
 id bt_plus
 id btn_card
@@ -3318,9 +3321,13 @@ id edge
 id edit_query
 id edt_city
 id edt_complement
+id edt_cvc_card
+id edt_date_card
 id edt_name
+id edt_name_card
 id edt_neighborhood
 id edt_number
+id edt_number_card
 id edt_state
 id edt_street
 id elastic
@@ -3329,6 +3336,7 @@ id end
 id endToStart
 id enterAlways
 id enterAlwaysCollapsed
+id et_emv
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu

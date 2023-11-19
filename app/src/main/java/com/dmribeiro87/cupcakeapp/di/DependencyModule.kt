@@ -5,6 +5,8 @@ import com.dmribeiro87.cupcakeapp.ui.address.AddressViewModel
 import com.dmribeiro87.cupcakeapp.ui.cart.CartViewModel
 import com.dmribeiro87.cupcakeapp.ui.details.DetailsViewModel
 import com.dmribeiro87.cupcakeapp.ui.home.HomeViewModel
+import com.dmribeiro87.cupcakeapp.ui.payment.CardViewModel
+import com.dmribeiro87.cupcakeapp.ui.payment.PixViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
@@ -14,4 +16,6 @@ val appModule = module {
     viewModel { DetailsViewModel(get()) }
     viewModel { CartViewModel(get()) }
     viewModel { AddressViewModel(get()) }
+    viewModel { CardViewModel(get()) }
+    viewModel { PixViewModel(get()) }
 }

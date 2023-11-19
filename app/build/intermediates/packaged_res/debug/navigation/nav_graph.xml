@@ -36,7 +36,7 @@
     <fragment
         android:id="@+id/nav_adress"
         android:name="com.dmribeiro87.cupcakeapp.ui.address.AddressFragment"
-        android:label="fragment_adress"
+        android:label="Endereço"
         tools:layout="@layout/fragment_adress" >
 
         <argument
@@ -51,13 +51,13 @@
     </fragment>
     <fragment
         android:id="@+id/nav_pix_payment"
-        android:name="com.dmribeiro87.cupcakeapp.PixPaymentFragment"
-        android:label="fragment_pix_payment"
+        android:name="com.dmribeiro87.cupcakeapp.ui.payment.PixPaymentFragment"
+        android:label="Pix"
         tools:layout="@layout/fragment_pix_payment" />
     <fragment
         android:id="@+id/nav_card_payment"
-        android:name="com.dmribeiro87.cupcakeapp.CardFragment"
-        android:label="fragment_card"
+        android:name="com.dmribeiro87.cupcakeapp.ui.payment.CardFragment"
+        android:label="Cartão"
         tools:layout="@layout/fragment_card" />
 
 </navigation>

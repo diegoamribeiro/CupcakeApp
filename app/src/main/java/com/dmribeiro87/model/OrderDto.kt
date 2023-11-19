@@ -10,8 +10,33 @@ data class Order(
     val list: List<Cupcake> = emptyList(), // Agora com um valor padrão
     val date: Timestamp? = null, // Usando Timestamp do Firebase
     val total: Double? = null,
-    val client: Client? = null
+    val client: Client? = null,
+    val paymentType: PaymentType? = null
 ) : Serializable
+
+enum class PaymentMethod {
+    PIX, CARD
+}
+
+data class PaymentType(
+    val method: PaymentMethod? = null,
+    val pixPayment: PixPayment? = null,
+    val cardPayment: CardPayment? = null
+): Serializable
+
+
+data class PixPayment(
+    val emvCode: String = ""
+): Serializable
+
+
+data class CardPayment(
+    val name: String = "",
+    val cardNumber: String = "",
+    val dueDate: String = "",
+    val cvc: String = ""
+): Serializable
+
 
 data class Client(
     val name: String = "",

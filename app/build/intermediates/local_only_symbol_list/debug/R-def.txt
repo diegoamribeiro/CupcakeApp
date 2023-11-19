@@ -9,6 +9,7 @@ color light_gray
 color translucent
 color white
 dimen fab_margin
+drawable background_rounded
 drawable cup_logo_img
 drawable cupcake_big
 drawable cupcake_chocolate_img
@@ -39,6 +40,8 @@ id action_nav_cart_to_vav_adress
 id action_nav_home_to_detailsFragment
 id bt_add_cart
 id bt_checkout
+id bt_copy
+id bt_finish
 id bt_less
 id bt_plus
 id btn_card
@@ -49,11 +52,16 @@ id cv_price
 id cv_quantity
 id edt_city
 id edt_complement
+id edt_cvc_card
+id edt_date_card
 id edt_name
+id edt_name_card
 id edt_neighborhood
 id edt_number
+id edt_number_card
 id edt_state
 id edt_street
+id et_emv
 id iv_cupcake
 id iv_empty_cart
 id iv_icon

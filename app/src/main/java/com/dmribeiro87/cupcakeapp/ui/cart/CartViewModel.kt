@@ -9,6 +9,7 @@ import com.dmribeiro87.model.Address
 import com.dmribeiro87.model.Client
 import com.dmribeiro87.model.Cupcake
 import com.dmribeiro87.model.Order
+import com.dmribeiro87.model.PaymentType
 import com.google.firebase.Timestamp
 import kotlinx.coroutines.launch
 import java.util.UUID
@@ -26,6 +27,20 @@ class CartViewModel(private val repository: CupcakeRepository) : ViewModel() {
         viewModelScope.launch {
             repository.getAllOrders { ordersList ->
                 _orders.value = ordersList
+            }
+        }
+    }
+
+    fun updatePaymentType(orderId: String, paymentType: PaymentType) {
+        viewModelScope.launch {
+            try {
+                val existingOrder = repository.getOrderById(orderId)
+                existingOrder?.let { order ->
+                    val updatedOrder = order.copy(paymentType = paymentType)
+                    repository.createOrUpdateOrder(updatedOrder)
+                }
+            } catch (e: Exception) {
+                // Trate exceções
             }
         }
     }

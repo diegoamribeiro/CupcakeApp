@@ -1,4 +1,4 @@
-#Sat Nov 18 20:21:03 BRT 2023
+#Sun Nov 19 16:04:18 BRT 2023
 base.0=/Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
 base.1=/Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
 base.10=/Users/diegoribeiro/AndroidStudioProjects/CupcakeApp/app/build/intermediates/dex/debug/mergeProjectDexDebug/8/classes.dex

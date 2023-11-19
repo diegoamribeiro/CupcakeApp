@@ -74,7 +74,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="24dp"
-        android:textSize="16sp"
+        android:textSize="14sp"
         android:fontFamily="@font/poppins_light"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -111,19 +111,20 @@
 
     <Button
         android:id="@+id/bt_add_cart"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:backgroundTint="@color/brown"
+        android:fontFamily="@font/poppins_bold"
+        android:layout_marginHorizontal="24dp"
+        android:paddingVertical="16dp"
+        android:text="Adicionar ao carrinho"
+        app:cornerRadius="8dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cv_price"
-        android:text="Adicionar ao carrinho"
-        android:paddingVertical="14dp"
-        android:textAllCaps="false"
-        app:cornerRadius="8dp"
-        android:fontFamily="@font/poppins_bold"
-        />
+        app:layout_constraintTop_toBottomOf="@id/cv_price" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
