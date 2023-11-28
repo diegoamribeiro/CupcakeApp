@@ -107,6 +107,7 @@ layout item_cart
 layout item_home
 menu menu_cart
 mipmap ic_launcher
+mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 navigation nav_graph
 string action_settings

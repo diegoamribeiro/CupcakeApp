@@ -15,23 +15,6 @@ class CupcakeRepository {
 
     private val db: FirebaseFirestore = Firebase.firestore
 
-    fun updateOrder(orderId: String, update: Map<String, Any>) {
-        val orderRef = db.collection("orders").document(orderId)
-
-        db.runTransaction { transaction ->
-            val snapshot = transaction.get(orderRef)
-            if (snapshot.exists()) {
-                transaction.update(orderRef, update)
-            } else {
-                // Trate o caso em que o pedido não existe
-            }
-        }.addOnSuccessListener {
-            Log.d("CupcakeRepository", "Pedido atualizado com sucesso.")
-        }.addOnFailureListener { e ->
-            Log.e("CupcakeRepository", "Erro ao atualizar o pedido.", e)
-        }
-    }
-
 
     fun deleteOrder(orderId: String) {
         db.collection("orders").document(orderId).delete()
@@ -101,56 +84,4 @@ class CupcakeRepository {
                 onComplete(emptyList())
             }
     }
-
-    fun removeCupcakeFromOrder(orderId: String, cupcake: Cupcake) {
-        val orderRef = db.collection("orders").document(orderId)
-
-        db.runTransaction { transaction ->
-            val snapshot = transaction.get(orderRef)
-            val order = snapshot.toObject(Order::class.java)
-            order?.let {
-                val updatedCupcakes = it.list.filterNot { it.productId == cupcake.productId }
-                transaction.update(orderRef, "list", updatedCupcakes)
-            }
-        }.addOnSuccessListener {
-            Log.d("CupcakeRepository", "Cupcake removed successfully from order.")
-        }.addOnFailureListener { e ->
-            Log.e("CupcakeRepository", "Error removing cupcake from order.", e)
-        }
-    }
-
-
-
-    fun getOrderForUser(userId: String, callback: (Order?) -> Unit) {
-        db.collection("orders")
-            .document(userId)
-            .get()
-            .addOnSuccessListener { document ->
-                if (document.exists()) {
-                    val order = document.toObject(Order::class.java)
-                    callback(order)
-                } else {
-                    callback(null)
-                }
-            }
-            .addOnFailureListener {
-                // Trate o erro conforme necessário
-                callback(null)
-            }
-    }
-
-    fun addToExistingOrder(userId: String, cupcake: Cupcake) {
-        db.collection("orders")
-            .document(userId)
-            .update("list", FieldValue.arrayUnion(cupcake))
-            .addOnSuccessListener {
-                // Trate a adição bem-sucedida
-            }
-            .addOnFailureListener {
-                // Trate o erro
-            }
-    }
-
-
-
 }

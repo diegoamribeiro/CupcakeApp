@@ -46,5 +46,9 @@
     {
         "merged": "/Users/diegoribeiro/.gradle/daemon/8.0/com.dmribeiro87.cupcakeapp-mergeDebugResources-53:/layout/item_cart.xml",
         "source": "/Users/diegoribeiro/.gradle/daemon/8.0/com.dmribeiro87.cupcakeapp-main-56:/layout/item_cart.xml"
+    },
+    {
+        "merged": "com.dmribeiro87.cupcakeapp-mergeDebugResources-53:/layout/fragment_home.xml",
+        "source": "com.dmribeiro87.cupcakeapp-main-56:/layout/fragment_home.xml"
     }
 ]

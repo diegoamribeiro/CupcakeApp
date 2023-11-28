@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -24,12 +25,16 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final ImageView ivLogo;
 
   @NonNull
+  public final ProgressBar pbHome;
+
+  @NonNull
   public final RecyclerView rvList;
 
   private FragmentHomeBinding(@NonNull ConstraintLayout rootView, @NonNull ImageView ivLogo,
-      @NonNull RecyclerView rvList) {
+      @NonNull ProgressBar pbHome, @NonNull RecyclerView rvList) {
     this.rootView = rootView;
     this.ivLogo = ivLogo;
+    this.pbHome = pbHome;
     this.rvList = rvList;
   }
 
@@ -66,13 +71,19 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.pb_home;
+      ProgressBar pbHome = ViewBindings.findChildViewById(rootView, id);
+      if (pbHome == null) {
+        break missingId;
+      }
+
       id = R.id.rvList;
       RecyclerView rvList = ViewBindings.findChildViewById(rootView, id);
       if (rvList == null) {
         break missingId;
       }
 
-      return new FragmentHomeBinding((ConstraintLayout) rootView, ivLogo, rvList);
+      return new FragmentHomeBinding((ConstraintLayout) rootView, ivLogo, pbHome, rvList);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
