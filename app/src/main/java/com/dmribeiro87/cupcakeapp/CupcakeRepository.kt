@@ -11,10 +11,9 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.tasks.await
 
-class CupcakeRepository {
-
+class CupcakeRepository(
     private val db: FirebaseFirestore = Firebase.firestore
-
+) {
 
     fun deleteOrder(orderId: String) {
         db.collection("orders").document(orderId).delete()
