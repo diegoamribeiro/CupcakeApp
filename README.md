@@ -23,6 +23,8 @@ Nele é possível escolher quantos Cupcakes quiser, aditar a quantidade no carri
 - Transitions animations
 - Firebase
 - Koin Dependency Injection
+- Mockk
+- JUnit
 
 ![Captura de Tela 2023-11-28 às 21 53 11](https://github.com/diegoamribeiro/CupcakeApp/assets/50756528/1ee4f36e-8fbc-4c9d-bede-fcec6a10275f) ![Captura de Tela 2023-11-28 às 21 53 25](https://github.com/diegoamribeiro/CupcakeApp/assets/50756528/072dfc4c-0621-47f7-918a-19b072cf152d)
 ![Captura de Tela 2023-11-28 às 21 53 41](https://github.com/diegoamribeiro/CupcakeApp/assets/50756528/0eb54c6d-e7c6-43ed-96c7-57c4f9f1a167) ![Captura de Tela 2023-11-28 às 21 54 13](https://github.com/diegoamribeiro/CupcakeApp/assets/50756528/f58613f0-290b-4797-8c6d-b4e386549e1f)
