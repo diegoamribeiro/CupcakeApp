@@ -45,7 +45,7 @@
                         </option>
                         <option name="myPositions">
                           <map>
-                            <entry key="action_nav_card_payment_to_successFragment">
+                            <entry key="action_nav_card_payment_to_nav_success">
                               <value>
                                 <LayoutPositions />
                               </value>
@@ -119,7 +119,7 @@
                         </option>
                         <option name="myPositions">
                           <map>
-                            <entry key="action_nav_pix_payment_to_successFragment">
+                            <entry key="action_nav_pix_payment_to_nav_success">
                               <value>
                                 <LayoutPositions />
                               </value>
@@ -129,13 +129,13 @@
                       </LayoutPositions>
                     </value>
                   </entry>
-                  <entry key="successFragment">
+                  <entry key="nav_success">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="899" />
-                            <option name="y" value="-304" />
+                            <option name="x" value="12" />
+                            <option name="y" value="12" />
                           </Point>
                         </option>
                       </LayoutPositions>

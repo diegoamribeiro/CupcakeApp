@@ -70,7 +70,7 @@
     <fragment
         android:id="@+id/nav_success"
         android:name="com.dmribeiro87.cupcakeapp.ui.success.SuccessFragment"
-        android:label="fragment_success"
+        android:label="Sucesso"
         tools:layout="@layout/fragment_success" />
 
 </navigation>
